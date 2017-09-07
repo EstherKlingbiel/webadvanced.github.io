@@ -1,0 +1,173 @@
+#assignment1 {
+	font-size: 20px;
+	margin-left: 60px;
+}
+
+body {
+	font-family: 'VT323', monospace;
+	color: white;
+	cursor: default;
+	overflow: scroll;
+	padding-left: 10px;
+	-webkit-user-select: none;
+
+	animation-name: fadeIn;/*fade-in on page load*/
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-delay: none;
+}
+	@keyframes fadeIn {/*fade-in opacity settings*/
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+#camera {
+	height: 17px;
+	width: 17px;
+}
+
+#email {
+	font-size: 25px;
+	margin-left: 35px;
+}
+
+#envelope {
+	height: 17px;
+	width: 17px;	
+}
+
+#folder {
+	height: 22px;
+	width: 22px;
+}
+
+#file {
+	height: 15px;
+	width: 15px;
+}
+
+#index {
+	color: white;
+	font-size: 20px;
+	margin-left: 60px;
+	text-decoration: none;	
+}
+
+#instagram {
+	font-size: 25px;
+	margin-left: 35px;
+}
+
+#links {
+	background-image: url('../images/space05.jpg');
+	background-repeat: no-repeat;
+	color: white;
+	cursor: pointer;
+	float: left;
+	font-size: 30px;
+	width: 100%;	
+}
+
+#linksList {
+	background-image: url('../images/space06.jpg');
+	background-position-x: 35px;
+	background-repeat: no-repeat;
+	color: white;
+	display: none;	
+}
+
+#phone {
+	font-size: 25px;
+	margin-left: 35px;
+}
+
+#phoneIcon {
+	height: 17px;
+	width: 17px;
+}
+
+#projects {
+	background-image: url('../images/space02.jpg');
+	background-repeat: no-repeat;
+	color: white;
+	cursor: pointer;
+	float: left;
+	font-size: 30px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.rainbowHover {/*Title style*/
+	color: white;
+	text-decoration: none;
+}
+	.rainbowHover:hover {/*Rainbow animation on hover*/
+		cursor: pointer;
+
+		animation-name: rainbow;
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		animation-delay: none;
+	}
+
+		@keyframes rainbow {
+		0% {color: rgb(153, 255, 51);}
+		10% {color: rgb(255, 255, 0);}
+		20%	{color: rgb(255, 153, 51);}
+		30%	{color: rgb(255, 102, 102);}
+		40% {color: rgb(255, 102, 204);}
+		50% {color: rgb(204, 102, 255);}
+		60% {color: rgb(102, 153, 255);}
+		70%	{color: rgb(51, 204, 255);}
+		80% {color: rgb(102, 255, 204);}
+		90% {color: rgb(102, 255, 102);}
+		100% {color: rgb(153, 255, 51);}
+	}
+
+#title {
+	background-image: url('../images/space01.jpg');
+	background-repeat: no-repeat;
+	color: white;
+	cursor: default;
+	float: left;
+	font-size: 35px;
+	margin-bottom: 10px;
+	overflow-wrap: break-word;
+	width: 100%;
+}
+
+#website {
+	font-size: 25px;
+	margin-left: 35px;
+}
+
+#week1 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	margin-left: 35px;	
+}
+
+#week1List {
+	background-image: url('../images/space04.jpg');
+	background-position-x: 60px;
+	background-repeat: no-repeat;
+	color: white;
+	display: none;	
+}
+
+#weekList {
+	background-image: url('../images/space03.jpg');
+	background-position-x: 35px;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+#world {
+	height: 17px;
+	width: 17px;	
+}

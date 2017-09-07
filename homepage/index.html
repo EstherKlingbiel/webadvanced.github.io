@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="assets/style/style.css" charset="utf-8"><!--CSS Stylesheet link-->
+
+		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"><!--Google font link-->
+
+		<link rel="icon" type="image/png" href="assets/images/e.png"><!--Browser icon-->
+
+		<title>Esther Klingbiel / Web Advanced: Javascript</title><!--Browser tab info-->
+	</head>
+<body>
+	<div id="title"><!--Container div for my name/class title/index, upper left-hand corner-->
+		<span id="titleSpan"><a href="https://estherloui.se" target="_blank" class="rainbowHover">ESTHER_KLINGBIEL</a>/<a href="http://f17webadvanced.leigler.tk/" target="_blank" class="rainbowHover">WEB_ADVANCED:JAVASCRIPT</a>/INDEX</span>
+	</div><!--End title-->
+
+	<div id="projects"><!--Container div for projects-->
+		<div id="projectsList"><!--"Projects" here-->
+			<span class="rainbowHover"><img src="assets/images/folder.png" id="folder"> PROJECTS</span><br>
+		</div><!--end projectsList-->
+			<div id="weekList"><!--"Week_XX" here-->
+				<span id="week1" class="rainbowHover"><img src="assets/images/folder.png"> WEEK_01</span><br><!--"Week 1" here-->
+					<div id="week1List"><!--Week 1 projects here-->
+						<!--Index-->
+						<span id="index" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="index.html" target="_blank" class="rainbowHover"> INDEX</a></span><br><!--End index-->
+
+						<!--Assignment 1-->
+						<span id="assignment1" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_01/helloworld/helloworld.html" target="_blank" class="rainbowHover"> ASSIGNMENT_01/HELLO_WORLD/WRECK_OF_THE_EDMUND_FITZGERALD</a></span><br><!--End assignment 1-->
+					</div><!--End week1List-->
+			</div><!--End weekList-->
+	</div><!--End projects-->
+	
+	<div id="links"><!--Container div for links-->
+		<div id="linksLabel"><!--"Links" here-->
+			<span class="rainbowHover"><img src="assets/images/folder.png" id="folder"> LINKS</span><br>
+		</div><!--End linksLabel-->
+			<div id="linksList"><!--Links here-->
+				<!--Website-->
+				<span id="website" class="rainbowHover"><img src="assets/images/world.png" id="world"><a href="https://estherloui.se" target="_blank" class="rainbowHover"> WEBSITE</a></span><br><!--End website-->
+
+				<!--Email-->
+				<span id="email" class="rainbowHover"><img src="assets/images/envelope.png" id="envelope"><a href="mailto:kline420@newschool.edu" class="rainbowHover"> EMAIL</a></span><br><!--End email-->
+
+				<!--Phone-->
+				<span id="phone" class="rainbowHover"><img src="assets/images/phone.png" id="phoneIcon"><a href="imessage:1-917-566-7580" class="rainbowHover"> PHONE</a></span><br><!--End phone-->
+
+				<!--Instagram-->
+				<span id="instagram" class="rainbowHover"><img src="assets/images/camera.png" id="camera"><a href="https://www.instagram.com/typo_phile/" target="_blank" class="rainbowHover"> INSTAGRAM</a></span><br><!--End instagram-->
+			</div><!--End linksList-->
+	</div><!--End links-->
+</body>
+
+<!--JQUERY-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!--JQuery script-->
+		<script>
+			console.log("jquery is working");
+
+			//Toggle weeks
+			$('#projectsList').click(function () {
+				$('#weekList').toggle();
+			})
+
+			//Turn on week 1 List. DOES NOT TOGGLE; SEE BUG FIX AT END OF CODE
+			$('#weekList').click(function () {
+				$('#week1List').css("display", "block");
+			});
+
+			//Toggle links
+			$('#linksLabel').click(function () {
+				$('#linksList').toggle ();
+			});
+		</script><!--End JQuery script-->
+</html>
+
+<!--BUG TO FIX:
+	When 
+		$('#weekList').click(function () {
+			$('#week1List').toggle();
+		});
+	is coded, when I click inside of week 1 (on a link: index/assignment 1), week1List is toggled off. 
+
+	When
+		$('#weekList').click(function () {
+			$('#week1List').css("display", "block");
+		});
+	is coded, I can click inside of week 1 (on a link) and week1List isn't toggled off. But when I click "Week 1", its submenu (the list with links) does not toggle off. 
+
+	Is there a way I can toggle this div AND not make it disappear when I click links?-->
