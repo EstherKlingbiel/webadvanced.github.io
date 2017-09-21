@@ -1,0 +1,18 @@
+var twentyLetterTimer = 0;
+
+for (var i = 0; i < 500; i++) {
+	setTimeout(function () {
+		var string = "";
+
+		for (var j = 0; j < 20; j++) {
+			var characters = "what do i put here, instead of math random?"; 
+				if (characters === 1) {
+					string = "Anthropocentricities"
+				} else {
+					string = "wah"
+				}
+		}//end loop
+		console.log(string);
+	}, twentyLetterTimer);//end setTimeout
+	twentyLetterTimer += 100;
+}//end for loop
