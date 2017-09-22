@@ -14,22 +14,43 @@
 		<span id="titleSpan"><a href="https://estherloui.se" target="_blank" class="rainbowHover">ESTHER_KLINGBIEL</a>/<a href="http://f17webadvanced.leigler.tk/" target="_blank" class="rainbowHover">WEB_ADVANCED:JAVASCRIPT</a>/INDEX</span>
 	</div><!--End title-->
 
+	<!--PROJECTS-->
 	<div id="projects"><!--Container div for projects-->
 		<div id="projectsList"><!--"Projects" here-->
 			<span class="rainbowHover"><img src="assets/images/folder.png" id="folder"> PROJECTS</span><br>
 		</div><!--end projectsList-->
-			<div id="weekList"><!--"Week_XX" here-->
-				<span id="week1" class="rainbowHover"><img src="assets/images/folder.png"> WEEK_01</span><br><!--"Week 1" here-->
-					<div id="week1List"><!--Week 1 projects here-->
-						<!--Index-->
-						<span id="index" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="index.html" target="_blank" class="rainbowHover"> INDEX</a></span><br><!--End index-->
+			<div class="weekListImage"><!--Div to hold image-->
+				<div id="week1ListParent"><!--Parent div for week 1-->
+					<span id="week1" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_01</span><br><!--"Week 1" here-->
+						<div id="week1List"><!--Week 1 projects here-->
+							<!--Index-->
+							<span id="index" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="index.html" target="_blank" class="rainbowHover"> INDEX</a></span><br><!--End index-->
 
-						<!--Assignment 1-->
-						<span id="assignment1" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_01/helloworld/helloworld.html" target="_blank" class="rainbowHover"> ASSIGNMENT_01/HELLO_WORLD/WRECK_OF_THE_EDMUND_FITZGERALD</a></span><br><!--End assignment 1-->
-					</div><!--End week1List-->
-			</div><!--End weekList-->
+							<!--Assignment 1-->
+							<span id="assignment1" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_01/helloworld/helloworld.html" target="_blank" class="rainbowHover"> ASSIGNMENT_01/HELLO_WORLD/WRECK_OF_THE_EDMUND_FITZGERALD</a></span><br><!--End assignment 1-->
+						</div><!--End week1List-->
+				</div><!--end week1ListParent-->
+
+				<div id="week2ListParent"><!--Parent div for week 2-->
+					<span id="week2" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_02</span><br><!--"Week 2" here-->
+						<div id="week2List"><!--Week 2 projects here-->
+							<!--Assignment 2: Console Loop-->
+							<span id="assignment2" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_02/consoleloop.html" target="_blank" class="rainbowHover"> ASSIGNMENT_02/CONSOLE_LOOP</a></span><br><!--End assignment 2-->
+						</div><!--end week2List-->
+				</div><!--end week2ListParent-->
+
+				<div id="week3ListParent"><!--Parent div for week 3-->
+					<span id="week3" class="rainbowhover weekListImage"><img src="assets/images/folder.png"> WEEK_03</span><br><!--Week 2 here-->
+						<div id="week3List"><!--week 3 projects here-->
+							<!--Assignment 3: Console Loop Animation-->
+							<span id="assignment3" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_03/consoleanimation.html" target="_blank" class="rainbowHover">ASSIGNMENT_03/CONSOLE_LOOP_ANIMATION</a></span><br><!--end assignment 3-->
+						</div><!--end week3List-->
+				</div><!--end week3ListParent-->
+			</div><!--end weekListImage-->
 	</div><!--End projects-->
+	<!--END PROJECTS-->
 	
+	<!--LINKS-->
 	<div id="links"><!--Container div for links-->
 		<div id="linksLabel"><!--"Links" here-->
 			<span class="rainbowHover"><img src="assets/images/folder.png" id="folder"> LINKS</span><br>
@@ -48,6 +69,17 @@
 				<span id="instagram" class="rainbowHover"><img src="assets/images/camera.png" id="camera"><a href="https://www.instagram.com/typo_phile/" target="_blank" class="rainbowHover"> INSTAGRAM</a></span><br><!--End instagram-->
 			</div><!--End linksList-->
 	</div><!--End links-->
+	<!--END LINKS-->
+
+	<!--READINGS-->
+	<div id="readings">
+		<div id="readingList">
+
+
+		</div>
+
+
+	</div><!--end readings-->
 </body>
 
 <!--JQUERY-->
@@ -57,12 +89,24 @@
 
 			//Toggle weeks
 			$('#projectsList').click(function () {
-				$('#weekList').toggle();
-			})
+				$('#week1ListParent').toggle();
+				$('#week2ListParent').toggle();
+				$('#week3ListParent').toggle();
+			});
 
-			//Turn on week 1 List. DOES NOT TOGGLE; SEE BUG FIX AT END OF CODE
-			$('#weekList').click(function () {
+			//Turn on week 1. DOES NOT TOGGLE; SEE BUG FIX AT END OF CODE
+			$('#week1ListParent').click(function () {
 				$('#week1List').css("display", "block");
+			});
+
+			//Turn on week 2
+			$('#week2ListParent').click(function () {
+				$('#week2List').css("display", "block");
+			});
+
+			//Turn on week 3
+			$('#week3ListParent').click(function () {
+				$('#week3List').css("display", "block");
 			});
 
 			//Toggle links
