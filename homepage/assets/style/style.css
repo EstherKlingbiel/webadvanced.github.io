@@ -3,6 +3,16 @@
 	margin-left: 60px;
 }
 
+#assignment2 {
+	font-size: 20px;
+	margin-left: 60px;
+}
+
+#assignment3 {
+	font-size: 20px;
+	margin-left: 60px;
+}
+
 body {
 	font-family: 'VT323', monospace;
 	color: white;
@@ -152,6 +162,18 @@ body {
 	margin-left: 35px;	
 }
 
+#week2 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	margin-left: 35px;	
+}
+
+#week3 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	margin-left: 35px;
+}
+
 #week1List {
 	background-image: url('../images/space04.jpg');
 	background-position-x: 60px;
@@ -160,11 +182,38 @@ body {
 	display: none;	
 }
 
-#weekList {
+#week2List {
+	background-image: url('../images/space04.jpg');
+	background-position-x: 60px;
+	background-repeat: no-repeat;
+	color: white;
+	display: none;
+}
+
+#week3List {
+	background-image: url('../images/space04.jpg');
+	background-position-x: 60px;
+	background-repeat: no-repeat;
+	color: white;
+	display: none;
+}
+
+#week1ListParent {
+	display: none;
+}
+
+#week2ListParent {
+	display: none;
+}
+
+#week3ListParent {
+	display: none;
+}
+
+.weekListImage {
 	background-image: url('../images/space03.jpg');
 	background-position-x: 35px;
 	background-repeat: no-repeat;
-	display: none;
 }
 
 #world {
