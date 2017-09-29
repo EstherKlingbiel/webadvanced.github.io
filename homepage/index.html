@@ -40,12 +40,20 @@
 				</div><!--end week2ListParent-->
 
 				<div id="week3ListParent"><!--Parent div for week 3-->
-					<span id="week3" class="rainbowhover weekListImage"><img src="assets/images/folder.png"> WEEK_03</span><br><!--Week 2 here-->
+					<span id="week3" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_03</span><br><!--Week 3 here-->
 						<div id="week3List"><!--week 3 projects here-->
 							<!--Assignment 3: Console Loop Animation-->
 							<span id="assignment3" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_03/consoleanimation.html" target="_blank" class="rainbowHover">ASSIGNMENT_03/CONSOLE_LOOP_ANIMATION</a></span><br><!--end assignment 3-->
 						</div><!--end week3List-->
 				</div><!--end week3ListParent-->
+
+				<div id="week4ListParent"><!--parent div for week 4-->
+					<span id="week4" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_04</span><br><!--week 3 here-->
+						<div id="week4List"><!--week 4 projects here-->
+							<!--Assignment 4: Console Loop Animation + Interface-->
+							<span id="assignment4" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_04/consoleloop.html" target="_blank" class="rainbowHover">ASSIGNMENT_04/CONSOLE_LOOP_ANIMATION+INTERFACE</a></span><br><!--end assignment 4-->
+						</div><!--end week4List-->
+				<div><!--end week4ListParent-->
 			</div><!--end weekListImage-->
 	</div><!--End projects-->
 	<!--END PROJECTS-->
@@ -92,6 +100,7 @@
 				$('#week1ListParent').toggle();
 				$('#week2ListParent').toggle();
 				$('#week3ListParent').toggle();
+				$('#week4ListParent').toggle();
 			});
 
 			//Turn on week 1. DOES NOT TOGGLE; SEE BUG FIX AT END OF CODE
@@ -108,6 +117,11 @@
 			$('#week3ListParent').click(function () {
 				$('#week3List').css("display", "block");
 			});
+
+			//turn on week 4
+			$('#week4ListParent').click(function () {
+				$('#week4List').css("display", "block");
+			})
 
 			//Toggle links
 			$('#linksLabel').click(function () {
