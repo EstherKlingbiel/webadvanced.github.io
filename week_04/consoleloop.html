@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset= "UTF-8"><!--so emojis show up-->
+
+		<title>Assignment 4: Console Loop Animation + Interface</title><!--browser tab info-->
+
+		<link rel="icon" type="image/png" href="assets/images/loop.png"><!--browser tab icon image-->
+
+		<!-- link to Google-hosted jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+		<script type="text/javascript" src="assets/js/loop.js"></script><!--link to js-->
+
+		<link rel="stylesheet" type="text/css" href="assets/style/style.css"><!--link to css-->
+
+		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"><!--google font link-->
+	</head>
+
+	<body>
+
+		<div class="leftSymbols">
+			👵🏼<br>
+			👧🏽👴🏻<br>
+			👴🏻👶🏻👵🏼<br>
+			👶🏻👵🏼👨🏾👴🏻<br>
+			👴🏻👵🏼👵🏼👵🏼👵🏼<br>
+			👶🏻👩🏿👵🏼👵🏼👵🏼👩🏿<br>
+			👨🏾👧🏽👵🏼👴🏻👧🏽👦🏼👦🏼<br>
+			👵🏼👦🏼👴🏻👵🏼👦🏼👵🏼👵🏼👴🏻<br>
+			👩🏿👵🏼👵🏼👵🏼👵🏼👵🏼👵🏼👦🏼👧🏽<br>
+			👵🏼👵🏼👨🏾👴🏻👶🏻👴🏻👵🏼👧🏽👵🏼👦🏼<br>
+			👶🏻👩🏿👨🏾👩🏿👨🏾👨🏾👶🏻👨🏾👴🏻👨🏾👨🏾<br>
+			👵🏼👵🏼👴🏻👨🏾👨🏾👵🏼👴🏻👦🏼👨🏾👦🏼👴🏻👩🏿<br>
+			👵🏼👵🏼👧🏽👵🏼👶🏻👧🏽👴🏻👩🏿👴🏻👵🏼👦🏼👧🏽👧🏽<br>
+			🔬👨🏽‍🔬👨🏽‍🔬🔬👩🏾‍🔬🔬🔬⚗️⚗️⚗️👨🏽‍🔬⚗️<br>
+			⚗️⚗️👩🏾‍🔬⚗️🔬👩🏾‍🔬🔬👩🏾‍🔬👩🏾‍🔬👨🏽‍🔬👩🏾‍<br>
+			🔬👨🏽‍🔬👩🏾‍🔬⚗️👩🏾‍🔬👩🏾‍🔬👩🏾‍🔬🔬⚛️🔬<br>
+			👨🏽‍🔬⚛️⚗️👨🏽‍🔬⚛️⚗️⚛️🔬🔬<br>
+			🔬👩🏾‍🔬👩🏾‍🔬🔬⚛️🔬⚗️⚛️<br>
+			🔬👨🏽‍🔬⚗️👩🏾‍🔬👩🏾‍🔬⚗️⚗️<br>
+			⚛️🔬👩🏾‍🔬🔬🔬👩🏾<br>
+			‍🔬🔬👩🏾‍🔬👨🏽‍🔬⚛️<br>
+			⚗️🔬🔬⚗️<br>
+			🔬👩🏾‍🔬⚛️<br>
+			🔬👩🏾‍<br>
+			🔬<br>
+			👨🏿‍🔬💎<br>
+			💍💎🔮<br>
+			💎💎👩🏻‍🔬👨🏿‍🔬<br>
+			💍💍💠💠💎<br>
+			💎👩🏻‍🔬🔮👩🏻‍🔬👨🏿‍🔬💎<br>
+			🔮🔮💠🔮💍⚛️⚛️<br>
+			🔮💎⚛️💠⚛️🔮💎👩🏻‍🔬<br>
+			🔮🔮💎💎💎👨🏿‍🔬⚛️💎👩🏻‍🔬<br>
+			🔮⚛️👨🏿‍🔬🔮💍💎💎💠💍💎<br>
+			⚛️⚛️🔮💍💠💎🔮⚛️🔮💠💍<br>
+			🔮💍💎⚛️💠💍💠💎👨🏿‍🔬👩🏻‍🔬⚛️👨🏿‍🔬<br>
+			⚛️💍💍👨🏿‍🔬🔮💍👨🏿‍🔬💎👩🏻‍🔬⚛️👩🏻‍🔬💎👨🏿‍🔬<br>
+			⚙️⛏️🔨🔧🔩🔩🔨🔧🔩🔨⚙️⛏️<br>
+			⚙️⛏️⛏️⚙️🔧🔨🔧⚙️⛏️🔩⛏️<br>
+			🔨⛏️🔧🔩⛏️🔨⚙️🔨🔩⛏️<br>
+			🔩⚙️🔩🔩🔨⚙️⛏️🔨⚙️<br>
+			⛏️🔧⛏️🔩🔩🔩⚙️⛏️<br>
+			⛏️⚙️🔨🔧🔩⚙️🔩<br>
+			⚙️🔨⛏️🔩🔧🔧<br>
+			🔨⚙️⚙️🔧⚙️<br>
+			⚙️⛏️⛏️🔩<br>
+			🔩🔧⚙️<br>
+			🔩⛏️<br>
+			🔩<br>
+		</div><!--end leftSymbols-->
+
+		<div class="rightSymbols">
+			🤔<br>
+			💭🤔<br>
+			💡💭🤔<br>
+			📈✔️💡💡<br>
+			✔️💭🤔📈💭<br>
+			💭🤔✔️💡📈📈<br>
+			💡💭📈💡📈💭🤔<br>
+			🤔🤔💭🤔✔️📈💭💭<br>
+			💡✔️💭✔️🤔💭💡💡💭<br>
+			📈💡💭💭✔️✔️🤔✔️💭🤔<br>
+			🤔📈💭🤔💡💡💭💡✔️💭💭<br>
+			💭🤔💭✔️💭✔️✔️🤔✔️💡🤔🤔<br>
+			💡💭💡🤔✔️💡✔️💭💡📈✔️📈🤔<br>
+			🌑🌓🌖🌔🌒🌕🌒🌕🌕🌔🌕🌔<br>
+			🌒🌘🌖🌔🌗🌕🌑🌒🌕🌑🌘<br>
+			🌒🌒🌘🌑🌘🌒🌑🌖🌕🌔<br>
+			🌗🌒🌒🌓🌒🌘🌔🌕🌑<br>
+			🌗🌑🌒🌘🌘🌒🌗🌘<br>
+			🌖🌖🌔🌘🌑🌑🌔<br>
+			🌔🌓🌕🌓🌒🌒<br>
+			🌖🌗🌑🌒🌘<br>
+			🌒🌕🌕🌘<br>
+			🌒🌗🌑<br>
+			🌒🌓<br>
+			🌗<br>
+			👺👹<br>
+			👺😡😈<br>
+			😡🦇😈👺<br>
+			😈😈😈👺😡<br>
+			😡😡😡😈👺🦇<br>
+			😡👹😡👹👺😡😡<br>
+			👺😡👺👺👹😈😡🦇<br>
+			👹👹😡👺👹😡🦇🦇👺<br>
+			😡😡🦇🦇🦇🦇👺🦇😈🦇<br>
+			😡👺😡😈👹😈🦇😡👹👹😡<br>
+			🦇👺👺👺👹😈👺😈👺😈😡😈<br>
+			😈👺😡👺👹👺👺👺😈😡😡👺🦇<br>
+			🙅🏽‍♂️😤✋🏼😤✋🏼✋🏼🙅🏽‍♂️🙅🏽‍♂️🚫🙅🏽‍♂️🚫😤<br>
+			🚫🙅🏽‍♂️🙅🏽‍♂️😤✋🏼👎🏾😤🚫✋🏼👎🏾😤<br>
+			✋🏼😤✋🏼🚫😤🙅🏽‍♂️👎🏾👎🏾👎🏾😤<br>
+			✋🏼🙅🏽‍♂️🚫✋🏼✋🏼🙅🏽‍♂️🙅🏽‍♂️😤😤<br>
+			😤😤🙅🏽‍♂️😤🙅🏽‍♂️🙅🏽‍♂️🙅🏽‍♂️🚫<br>
+			🚫😤🚫👎🏾🙅🏽‍♂️👎🏾😤<br>
+			👎🏾👎🏾🚫🙅🏽‍♂️✋🏼🚫<br>
+			🚫✋🏼🙅🏽‍♂️✋🏼👎🏾<br>
+			👎🏾🚫🚫🚫<br>
+			✋🏼😤🚫<br>
+			✋🏼👎🏾<br>
+			🚫<br>
+	</div><!--end rightSymbols-->
+
+	<div class="centerSymbols">
+		💶💵<br>
+		💵💴💴💷<br>
+		💶💵💴💵💶💳<br>
+		💷💶💶💷💳💷💷💳<br>
+		💳💶💴💵💶💶💶💶💳💴<br>
+		💴💶💴💳💵💶💴💵💵💶💶💳<br>
+		💵💳💳💳💷💷💶💴💴💵💶💶💶💴<br>
+		🌥️⛅💧🌤️⛅☁️💧☁️🌥️☁️⛅🌥️<br>
+		☁️💧☁️💧💧💧⛅⛅💧💧<br>
+		💧🌥️💧💧🌥️⛅🌤️🌥️<br>
+		🌤️⛅💧☁️🌥️⛅<br>
+		☁️💧🌤️☁️<br>
+		🌤️🌤️<br>
+		💭😕⁉️⁉️<br>
+		💭😕❓💭❓⁉️<br>
+		💭🤔💭💭⁉️😕❓⁉️<br>
+		⁉️🤔⁉️🤔💭⁉️😕❓💭❓<br>
+		💭🤔😕⁉️❓❓💭😕💭😕🤔🤔<br>
+		🤔⁉️😕🤔💭💭⁉️⁉️💭❓💭❓⁉️❓<br>
+		☹️😔😩😢😢😩☹️😩☹️😢😩😩<br>
+		😭☹️😭😭☹️😭☹️☹️😔😭<br>
+		😔😩😩😩😢😭😩☹️<br>
+		😔😔😭☹️😔😔<br>
+		😭😭☹️😢<br>
+		☹️😔<br>
+		☠️💣🗡️💣<br>
+		💣☠️💣⚔️⚔️🗡️<br>
+		🗡️🔪☠️⚔️🔪☠️💣🔪<br>
+		☠️🔪💣☠️☠️⚔️⚔️💣⚔️⚔️<br>
+		☠️💣⚔️🔪☠️🔪🔪🗡️🗡️☠️⚔️💣<br>
+		💣⚔️🔪⚔️🗡️☠️⚔️☠️🗡️💣🗡️🔪⚔️🗡️<br>
+		🚚🚘🚘🚘🚛🚗🚘🚘🚐🚛🚛🚛<br>
+		🚘🚛🚐🚘🚗🚐🚐🚚🚚🚐<br>
+		🚘🚚🚐🚗🚘🚚🚘🚛<br>
+		🚚🚛🚛🚘🚚🚛<br>
+		🚚🚘🚛🚘<br>
+		🚗🚛<br>
+		😈👻🦄👻<br>
+		😈👻💀👽👽😈<br>
+		😈😈👽😈👽😈🦄💀<br>
+		🦄😈👽😈🦄🦄💀😈🦄😈<br>
+		💀👻🦄😈👻💀💀💀😈💀👽😈<br>
+		💀😈💀😈🦄😈👽💀👽👽😈💀👻🦄<br>
+		⏳⏱️⏳⌚⏳⏱️⏰⌚⏰⏳🕰️⏱️<br>
+		🕰️⏱️⌚🕰️⏰⏰⏳⏳⌚⏰<br>
+		⌚⏰⏱️🕰️⌚⌚⌚⏱️<br>
+		⏳⏳🕰️🕰️🕰️🕰️<br>
+		⏱️⏰⏱️⌚<br>
+		⏰⏰<br>
+	</div><!--end centerSymbols-->
+
+	<span class="flower01">🌸</span><!--end flower01-->
+
+	<span class="flower02">🌹</span><!--end flower02-->
+
+	<span class="flower03">🌺</span><!--end flower03-->
+
+	<span class="flower04">🌻</span><!--end flower04-->
+
+	<span class="flower05">💐</span><!--end flower05-->
+
+	<span class="flower06">🌷</span><!--end flower06-->
+
+	
+
+			
+<!--end anthro
+		<div class="word">
+			<span id="anthro">ANTHROPOCENTRICITIES</span><br>
+			<span id="buckminster">BUCKMINSTERFULLERENE</span><br>
+			<span id="crystal">CRYSTALLOGRAPHICALLY</span><br>
+			<span id="department">DEPARTMENTALIZATIONS</span><br>
+			<span id="extemp">EXTEMPORANEOUSNESSES</span><br>
+			<span id="forethought">FORETHOUGHTFULNESSES</span><br>
+			<span id="archaeo">ARCHAEOASTRONOMIES</span><br>
+			<span id="bloodthirst">BLOODTHIRSTINESSES</span><br>
+			<span id="cantankerous">CANTANKEROUSNESSES</span><br>
+			<span id="denominal">DENOMINALATIONISMS</span><br>
+			<span id="evapo">EVAPOTRANSPIRATION</span><br>
+			<span id="feeble">FEEBLEMINDEDNESSES</span><br>
+			<span id="atrab">ATRABILIOUSNESSES</span><br>
+			<span id="bloodguilt">BLOODGUILTINESSES</span><br>
+			<span id="crash">CRASHWORTHINESSES</span><br>
+			<span id="demyth">DEMYTHOLOGIZATION</span><br>
+			<span id="everlast">EVERLASTINGNESSES</span><br>
+			<span id="florif">FLORIFEROUSNESSES</span><br>
+		</div>nd anthro-->
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+
+
+
+
+
+
+
+</html>

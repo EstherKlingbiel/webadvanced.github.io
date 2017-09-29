@@ -1,0 +1,160 @@
+.leftSymbols {
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 10px;
+	opacity: 1;	
+}
+
+.rightSymbols {
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 10px;
+	opacity: 1;	
+	text-align: right;
+}
+
+.centerSymbols {
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 10px;
+	opacity: 1;	
+	text-align: center;
+}
+
+.flower01 {
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 20%;
+	opacity: .8;	
+	margin-top: 30px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+.flower02 {
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 72%;
+	opacity: .8;	
+	margin-top: 30px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+.flower03 {
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 20%;
+	opacity: .8;	
+	margin-top: 750px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+.flower04 {
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 72%;
+	opacity: .8;	
+	margin-top: 750px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+.flower05 {
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 20%;
+	opacity: .8;	
+	margin-top: 1475px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+.flower06 {
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 72%;
+	opacity: .8;	
+	margin-top: 1475px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+
+
+
+
+
+
+body {
+	font-family: 'VT323', monospace;
+	font-size: 25px;
+	color: black;
+	cursor: default;
+	letter-spacing: 20px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	display: inline;
+	width: 100%;
+	
+	overflow-wrap: break-word;
+	padding-left: 10px;
+	-webkit-user-select: none;
+
+	animation-name: fadeIn;/*fade-in on page load*/
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-delay: none;
+}
+	@keyframes fadeIn {/*fade-in opacity settings*/
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+.word {
+	width: 100%;
+	position: absolute;
+	letter-spacing: 30px;
+	top: 0px;
+	left: 0px;
+	font-size: 80px;
+	display: inline;
+	z-index: -1;
+	line-height: 90px;
+	text-align: center;
+
+}
+
