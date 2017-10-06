@@ -48,12 +48,21 @@
 				</div><!--end week3ListParent-->
 
 				<div id="week4ListParent"><!--parent div for week 4-->
-					<span id="week4" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_04</span><br><!--week 3 here-->
+					<span id="week4" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_04</span><br><!--week 4 here-->
 						<div id="week4List"><!--week 4 projects here-->
 							<!--Assignment 4: Console Loop Animation + Interface-->
 							<span id="assignment4" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_04/consoleloop.html" target="_blank" class="rainbowHover">ASSIGNMENT_04/CONSOLE_LOOP_ANIMATION+INTERFACE</a></span><br><!--end assignment 4-->
 						</div><!--end week4List-->
-				<div><!--end week4ListParent-->
+				</div><!--end week4ListParent-->
+
+				<div id="week5ListParent"><!--parent div for week 5-->
+					<span id="week5" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_05</span><br><!--week 5 here-->
+						<div id="week5List"><!--week 5 projects here-->
+							<!--Assignment 5: Console Loop Animation + Interface/Revised-->
+							<span id="assignment5" class="rainbowHover">
+							<img src="assets/images/file.png" id="file"><a href="week_05/consoleloop.html" target="_blank" class="rainbowHover">ASSIGNMENT_05/CONSOLE_LOOP_ANIMATION+INTERFACE/REVISED</a></span><br><!--end assignment 5-->
+						</div><!--end week5List-->
+				</div><!--end week5ListParent-->
 			</div><!--end weekListImage-->
 	</div><!--End projects-->
 	<!--END PROJECTS-->
@@ -101,6 +110,7 @@
 				$('#week2ListParent').toggle();
 				$('#week3ListParent').toggle();
 				$('#week4ListParent').toggle();
+				$('#week5ListParent').toggle();
 			});
 
 			//Turn on week 1. DOES NOT TOGGLE; SEE BUG FIX AT END OF CODE
@@ -121,7 +131,12 @@
 			//turn on week 4
 			$('#week4ListParent').click(function () {
 				$('#week4List').css("display", "block");
-			})
+			});
+
+			//turn on week 5
+			$('#week5ListParent').click(function () {
+				$('#week5List').css("display", "block");
+			});
 
 			//Toggle links
 			$('#linksLabel').click(function () {
