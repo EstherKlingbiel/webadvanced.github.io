@@ -63,6 +63,17 @@
 							<img src="assets/images/file.png" id="file"><a href="week_05/consoleloop.html" target="_blank" class="rainbowHover">ASSIGNMENT_05/CONSOLE_LOOP_ANIMATION+INTERFACE/REVISED</a></span><br><!--end assignment 5-->
 						</div><!--end week5List-->
 				</div><!--end week5ListParent-->
+
+				<div id="week6ListParent"><!--parent div for week 6-->
+					<span id="week6" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_06</span><br><!--week 6 here-->
+						<div id="week6List"><!--week 6 projects here-->
+							<!--Assignment 6.1: Loop Sketch 1-->
+							<span id="assignment61" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_06/sketch_01/sketch_01.html" target="_blank" class="rainbowHover">ASSIGNMENT_06.1/LOOP_SKETCH_01</a></span><br><!--end assignment 6.1-->
+
+							<!--Assignment 6.2: Loop Sketch 2-->
+							<span id="assignment62" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_06/sketch_02/sketch_02.html" target="_blank" class="rainbowHover">ASSIGNMENT_06.2/LOOP_SKETCH_02</a></span><br><!--end assignment 6.2-->
+						</div><!--end week6List-->
+				</div><!--end week6ListParent-->
 			</div><!--end weekListImage-->
 	</div><!--End projects-->
 	<!--END PROJECTS-->
@@ -111,6 +122,7 @@
 				$('#week3ListParent').toggle();
 				$('#week4ListParent').toggle();
 				$('#week5ListParent').toggle();
+				$('#week6ListParent').toggle();
 			});
 
 			//Turn on week 1. DOES NOT TOGGLE; SEE BUG FIX AT END OF CODE
@@ -137,6 +149,11 @@
 			$('#week5ListParent').click(function () {
 				$('#week5List').css("display", "block");
 			});
+
+			//turn on week 6
+			$('#week6ListParent').click(function () {
+				$('#week6List').css("display", "block");
+			})
 
 			//Toggle links
 			$('#linksLabel').click(function () {
