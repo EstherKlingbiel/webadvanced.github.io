@@ -23,6 +23,16 @@
 	margin-left: 60px;
 }
 
+#assignment61 {
+	font-size: 20px;
+	margin-left: 60px;
+}
+
+#assignment62 {
+	font-size: 20px;
+	margin-left: 60px;
+}
+
 body {
 	font-family: 'VT323', monospace;
 	color: white;
@@ -196,6 +206,12 @@ body {
 	margin-left: 35px;
 }
 
+#week6 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	margin-left: 35px;
+}
+
 #week1List {
 	background-image: url('../images/space04.jpg');
 	background-position-x: 60px;
@@ -236,6 +252,14 @@ body {
 	display: none;
 }
 
+#week6List {
+	background-image: url('../images/space04.jpg');
+	background-position-x: 60px;
+	background-repeat: no-repeat;
+	color: white;
+	display: none;
+}
+
 #week1ListParent {
 	display: none;
 }
@@ -253,6 +277,10 @@ body {
 }
 
 #week5ListParent {
+	display: none;
+}
+
+#week6ListParent {
 	display: none;
 }
 
