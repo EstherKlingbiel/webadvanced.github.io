@@ -68,12 +68,26 @@
 					<span id="week6" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_06</span><br><!--week 6 here-->
 						<div id="week6List"><!--week 6 projects here-->
 							<!--Assignment 6.1: Loop Sketch 1-->
-							<span id="assignment61" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_06/sketch_01/sketch_01.html" target="_blank" class="rainbowHover">ASSIGNMENT_06.1/LOOP_SKETCH_01</a></span><br><!--end assignment 6.1-->
+							<span id="assignment61" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_06/sketch_01/sketch_01.html" target="_blank" class="rainbowHover">ASSIGNMENT_06.01/LOOP_SKETCH_01</a></span><br><!--end assignment 6.1-->
 
 							<!--Assignment 6.2: Loop Sketch 2-->
-							<span id="assignment62" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_06/sketch_02/sketch_02.html" target="_blank" class="rainbowHover">ASSIGNMENT_06.2/LOOP_SKETCH_02</a></span><br><!--end assignment 6.2-->
+							<span id="assignment62" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_06/sketch_02/sketch_02.html" target="_blank" class="rainbowHover">ASSIGNMENT_06.02/LOOP_SKETCH_02</a></span><br><!--end assignment 6.2-->
 						</div><!--end week6List-->
 				</div><!--end week6ListParent-->
+
+				<div id="week7ListParent"><!--parent div for week 7-->
+					<span id="week7" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_07</span><br><!--week 7 here-->
+						<div id="week7List">
+							<!--Assignment 7.1: Opacity-->
+							<span id="assignment71" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_07.1_opacity/dreamCollage.html" target="_blank" class="rainbowHover">ASSIGNMENT_07.01/LOOP_SKETCH:OPACITY</a></span><br><!--end assignment 7.1-->
+
+							<!--assignment 7.2: duplication-->
+							<span id="assignment72" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_07.2_duplication/dreamCollage.html" target="_blank" class="rainbowHover">ASSIGNMENT_07.02/LOOP_SKETCH:DUPLICATION</a></span><br><!--end assignment 7.2-->
+
+							<!--assignment 7.3: description-->
+							<span id="assignment73" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_07.3_description/dreamCollage.html" target="_blank" class="rainbowHover">ASSIGNMENT_07.03/LOOP_SKETCH:DESCRIPTION</a></span><br><!--end assignment 7.3-->
+						</div><!--end week7List-->
+				</div><!--end week7ListParent-->
 			</div><!--end weekListImage-->
 	</div><!--End projects-->
 	<!--END PROJECTS-->
@@ -123,6 +137,7 @@
 				$('#week4ListParent').toggle();
 				$('#week5ListParent').toggle();
 				$('#week6ListParent').toggle();
+				$('#week7ListParent').toggle();
 			});
 
 			//Turn on week 1. DOES NOT TOGGLE; SEE BUG FIX AT END OF CODE
@@ -153,7 +168,12 @@
 			//turn on week 6
 			$('#week6ListParent').click(function () {
 				$('#week6List').css("display", "block");
-			})
+			});
+
+			//turn on week 7 
+			$('#week7ListParent').click(function () {
+				$('#week7List').css("display", "block");
+			});
 
 			//Toggle links
 			$('#linksLabel').click(function () {
