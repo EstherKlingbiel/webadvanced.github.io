@@ -1,0 +1,144 @@
+body {
+	font-family: 'VT323', monospace;
+	-webkit-user-select: none;
+}
+
+#astronautsParent {
+	width: 30%;
+}
+	#astronauts {
+		width: 100%;
+		z-index: 1;
+	}
+
+#blackholeParent {
+	width: 10%;
+	top: 17px;
+	left: 250px;
+	float: left;
+	position: absolute;
+	z-index: 2;
+
+}
+	#blackhole {
+		width: 100%;	
+	}
+
+#cometParent {
+	width: 20%;
+	top: 450px;
+	left: 325px;
+	float: left;
+	position: absolute;
+	z-index: 2;
+}
+	#comet {
+		width: 100%;
+	}
+
+#computerParent {
+	width: 7%;
+	top: 10px;
+	left: 970px;
+	float: left;
+	position: absolute;
+	z-index: 2;
+}
+	#computer {
+		width: 100%;
+	}
+
+#dolphinsParent {
+	width: 25%;
+	top: 200px;
+	left: 800px;
+	float: left;
+	position: absolute;
+	z-index: 2;
+}
+	#dolphins {
+		width: 100%;
+	}
+
+#fishParent {
+	width: 15%;
+	top: 250px;
+	left: 850px;
+	float: left;
+	position: absolute;
+	z-index: 3;
+}
+	#fish {
+		width: 100%;
+	}
+
+#rosesParent {
+	width: 15%;
+	top: 200px;
+	left: 500px;
+	float: left;
+	position: absolute;
+	z-index: 4;
+}
+	#roses {
+		width: 100%;
+	}
+
+#snakeParent {
+	width: 25%;
+	top: 100px;
+	left: 950px;
+	float: left;
+	position: absolute;
+	z-index: 0;
+}
+	#snake {
+		width: 100%;
+	}
+
+#waterBlueParent {
+	width: 40%;
+	top: 0px;
+	left: 768px;
+	float: left;
+	position: absolute;
+	z-index: 0;
+}
+	#waterBlue {
+		width: 100%;
+	}
+
+#waterPurpleParent {
+	width: 100%;
+	top: 300px;
+	left: 0px;
+	float: left;
+	position: absolute;
+	z-index: 0;
+}
+	#waterPurple {
+		width: 100%;
+	}
+
+.description {
+	background-color: white;
+	float: left;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	z-index: 5;
+	font-size: 20px;
+	border: black 1px solid;
+}
+
+#spaceParent {
+	width: 75%;
+	top: 0px;
+	left: 0px;
+	float: left;
+	position: absolute;
+}
+	#space {
+		width: 100%;
+		z-index: 0;
+	}
