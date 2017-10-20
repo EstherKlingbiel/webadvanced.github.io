@@ -1,0 +1,1113 @@
+body {
+	font-family: 'VT323', monospace;
+	color: black;
+	cursor: default;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	display: inline;
+	width: 100%;
+	
+	overflow-wrap: break-word;
+	-webkit-user-select: none;
+
+	animation-name: fadeIn;/*fade-in on page load*/
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-delay: none;
+}
+	@keyframes fadeIn {/*fade-in opacity settings*/
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+/*ANTHROPOCENTRICITIES*/
+#anthroEmojis {
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 25px;
+	letter-spacing: 20px;
+	margin-left: 10px;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#anthroEmojis:hover {
+		opacity: 0;
+
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#anthroLetters {
+	margin-top: 0px;
+	margin-left: 13px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+}
+
+#anthroDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 170px;
+	margin-left: 10px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 20px;
+	border: black 1px solid;
+}
+
+#anthroEmojisSmall {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin-top: 5px;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+}
+/*END ANTHROPOCENTRICITIES*/
+
+/*BUCKMINSTERFULLERENE*/
+#buckminsterEmojis {
+	margin-top: 430px;
+	z-index: 2;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#buckminsterEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#buckminsterLetters {
+	margin-top: 413px;
+	margin-left: 13px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+}
+
+#buckminsterDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 555px;
+	margin-left: 10px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+}
+
+#buckminsterEmojisSmall {
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	margin-top: 510px;
+	z-index: 0;
+}
+/*END BUCKMINSTERFULLERENE*/
+/*CRYSTALLOGRAPHICALLY*/
+#crystalEmojis {
+	margin-top: 825px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	display: inline;
+	z-index: 2;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#crystalEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#crystalLetters {
+	margin-top: 810px;
+	margin-left: 13px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+}
+
+#crystalDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 1000px;
+	margin-left: 10px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+}
+
+#crystalEmojisSmall {
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	margin-top: 810px;
+	z-index: 0;
+}
+/*END CRYSTALLOGRAPHICALLY*/
+/*DEPARTMENTALIZATIONS*/
+#departmentEmojis {
+	margin-top: 1225px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	display: inline;
+	z-index: 2;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#departmentEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#departmentLetters {
+	margin-top: 1205px;
+	margin-left: 13px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+}
+
+#departmentDefinition {
+	background-color: white;
+	z-index: 4;
+	margin-top: 1250px;
+	margin-left: 10px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+}
+
+#departmentEmojisSmall {
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	margin-top: 1275px;
+	z-index: 0;
+}
+/*END DEPARTMENTALIZATIONS*/
+/*EXTEMPORANEOUSNESSES*/
+#extempEmojis {
+	margin-top: 1392px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#extempEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#extempLetters {
+	margin-top: 1390px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+#extempDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 1475px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 40%;
+	margin-right: 10px;
+}
+
+#extempEmojisSmall {
+	margin-top: 1377px;
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+}
+/*END EXTEMPORANEOUSNESSES*/
+/*FORETHOUGHTFULNESSES*/
+#forethoughtEmojis {
+	margin-top: 1625px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#forethoughtEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#forethoughtLetters {
+	margin-top: 1620px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+#forethoughtDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 1650px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 36%;
+	margin-right: 10px;
+}
+
+#forethoughtEmojisSmall {
+	margin-top: 1663px;
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+}
+/*END FORETHOUGHTFULNESSES*/
+/*ARCHAEOASTRONOMIES*/
+#archaeoEmojis {
+	margin-top: 1850px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#archaeoEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#archaeoLetters {
+	margin-top: 1850px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+#archaeoDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 1935px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 38%;
+	margin-right: 10px;
+}
+
+#archaeoEmojisSmall {
+	margin-top: 1835px;
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+}
+/*END ARCHAEOASTRONOMIES*/
+/*BLOODTHIRSTINESSES*/
+#bloodthirstEmojis {
+	margin-top: 2080px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#bloodthirstEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#bloodthirstLetters {
+	margin-top: 2080px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+#bloodthirstDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 2130px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 35%;
+	margin-right: 10px;
+}
+
+#bloodthirstEmojisSmall {
+	margin-top: 2118px;
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+}
+/*END BLOODTHIRSTINESSES*/
+/*CANTANKEROUSNESSES*/
+#cantankEmojis {
+	margin-top: 2305px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#cantankEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#cantankLetters {
+	margin-top: 2305px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+#cantankDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 2400px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 37%;
+	margin-right: 10px;
+}
+
+#cantankEmojisSmall {
+	margin-top: 2292px;
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+}
+/*END CANTANKEROUSNESSES*/
+/*DENOMINATIONALISMS*/
+#denomEmojis {
+	margin-top: 2536px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#denomEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#denomLetters {
+	margin-top: 2534px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+#denomDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 2550px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 35%;
+	margin-right: 10px;
+}
+
+#denomEmojisSmall {
+	margin-top: 2573px;
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+}
+/*END DENOMINALATIONISMS*/
+/*EVAPOTRANSPIRATION*/
+#evapoEmojis {
+	margin-top: 2765px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#evapoEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#evapoLetters {
+	margin-top: 2765px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+#evapoDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 2850px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 38%;
+	margin-right: 10px;
+}
+
+#evapoEmojisSmall {
+	margin-top: 2743px;
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+}
+/*END EVAPOTRANSPIRATION*/
+/*FEEBLEMINDEDNESSES*/
+#feebleEmojis {
+	margin-top: 2995px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#feebleEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#feebleLetters {
+	margin-top: 2995px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+#feebleDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 3055px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 37%;
+	margin-right: 10px;
+}
+
+#feebleEmojisSmall {
+	margin-top: 3033px;
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+}
+/*END FEEBLEMINDEDNESSES*/
+/*ATRABILIOUSNESSES*/
+#atrabEmojis {
+	margin-top: 3225px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#atrabEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#atrabLetters {
+	margin-top: 3225px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+#atrabDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 3310px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 39%;
+	margin-right: 10px;
+}
+
+#atrabEmojisSmall {
+	margin-top: 3205px;
+	position: absolute;
+	margin-left: 10px;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+}
+/*END ATRABILIOUSNESSES*/
+/*BLOODGUILTINESSES*/
+#bloodguiltEmojis {
+	margin-top: 3430px;
+	margin-left: 10px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: right;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#bloodguiltEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#bloodguiltLetters {
+	margin-top: 3430px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: right;
+	width: 100%;
+	display: inline-block;
+}
+
+#bloodguiltDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 3655px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 75%;
+	margin-right: 10px;
+}
+
+#bloodguiltEmojisSmall {
+	margin-top: 3420px;
+	margin-left: -10px;
+	position: absolute;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: right;
+}
+/*END BLOODGUILTINESSES*/
+/*CRASHWORTHINESSES*/
+#crashEmojis {
+	margin-top: 3860px;
+	margin-left: 10px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: right;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#crashEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#crashLetters {
+	margin-top: 3860px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: right;
+	width: 100%;
+	display: inline-block;
+}
+
+#crashDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 3983px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 80%;
+	margin-right: 10px;
+}
+
+#crashEmojisSmall {
+	margin-top: 3937px;
+	margin-left: -10px;
+	position: absolute;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: right;
+}
+/*END CRASHWORTHINESSES*/
+/*DEMYTHOLOGIZATION*/
+#demythEmojis {
+	margin-top: 4255px;
+	margin-left: 10px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: right;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#demythEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#demythLetters {
+	margin-top: 4255px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: right;
+	width: 100%;
+	display: inline-block;
+}
+
+#demythDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 4440px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 73%;
+	margin-right: 10px;
+}
+
+#demythEmojisSmall {
+	margin-top: 4237px;
+	margin-left: -10px;
+	position: absolute;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: right;
+}
+/*END DEMYTHOLOGIZATION*/
+/*EVERLASTINGNESSES*/
+#everEmojis {
+	margin-top: 4650px;
+	margin-left: 10px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 20px;
+	z-index: 2;
+	width: 100%;
+	text-align: right;
+	display: none;
+
+	-webkit-transition: opacity 1s ease-out;
+}
+	#everEmojis:hover {
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-in;	
+	}
+
+#everLetters {
+	margin-top: 4650px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	font-size: 25px;
+	letter-spacing: 13px;
+	line-height: 33px;
+	z-index: 1;
+	text-align: right;
+	width: 100%;
+	display: inline-block;
+}
+
+#everDefinition {
+	background-color: white;
+	z-index: 2;
+	margin-top: 4777px;
+	position: absolute;
+	font-size: 20px;
+	border: black 1px solid;
+	margin-left: 76%;
+	margin-right: 10px;
+}
+
+#everEmojisSmall {
+	margin-top: 4725px;
+	margin-left: -10px;
+	position: absolute;
+	letter-spacing: 5px;
+	font-size: 15px;
+	line-height: 25px;
+	width: 100%;
+	z-index: 0;
+	text-align: right
+}
+
+#flower01 {
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 50%;
+	opacity: .8;	
+	margin-top: 30px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+#florifLetters {
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 50%;
+	opacity: .8;	
+	margin-top: 35px;
+	font-size: 25px;
+	letter-spacing: 13px;
+	margin-right: 0px;
+	display: none;
+}
+
+#flower02 {
+	z-index: 3;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 50%;
+	opacity: .8;	
+	margin-top: 675px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+#instructions02 {
+	z-index: 3;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 50%;
+	opacity: .8;	
+	margin-top: 675px;
+	font-size: 25px;
+	letter-spacing: 13px;
+	margin-right: 0px;
+	display: none;
+}
+
+#flower03 {
+	z-index: 3;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 50%;
+	opacity: .8;	
+	margin-top: 850px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+#instructions03 {
+	z-index: 3;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 50%;
+	opacity: .8;	
+	margin-top: 860px;
+	font-size: 25px;
+	letter-spacing: 13px;
+	margin-right: 0px;
+	display: none;
+}
+
+#flower04 {
+	z-index: 3;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin-left: 50%;
+	opacity: .8;	
+	margin-top: 1450px;
+	font-size: 100px;
+	margin-right: 0px;
+}
+
+#instructions04 {
+	z-index: 3;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	margin-left: 52%;
+	
+	margin-top: 900px;
+	
+	margin-right: 0px;
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

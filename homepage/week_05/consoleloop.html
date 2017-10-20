@@ -1,0 +1,952 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset= "UTF-8"><!--so emojis show up-->
+
+		<title>Assignment 5: Console Loop Animation + Interface: Revised</title><!--browser tab info-->
+
+		<link rel="icon" type="image/png" href="assets/images/loop.png"><!--browser tab icon image-->
+
+		<!-- link to Google-hosted jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+		<script type="text/javascript" src="assets/js/loop.js"></script><!--link to js-->
+
+		<link rel="stylesheet" type="text/css" href="assets/style/style.css"><!--link to css-->
+
+		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"><!--google font link-->
+	</head>
+
+	<body>
+	<!--ANTHROPOCENTRICITIES-->
+		<div id="anthroEmojis">
+			👵🏼<br>
+			👧🏽👴🏻<br>
+			👴🏻👶🏻👵🏼<br>
+			👶🏻👵🏼👨🏾👴🏻<br>
+			👴🏻👵🏼👵🏼👵🏼👵🏼<br>
+			👶🏻👩🏿👵🏼👵🏼👵🏼👩🏿<br>
+			👨🏾👧🏽👵🏼👴🏻👧🏽👦🏼👦🏼<br>
+			👵🏼👦🏼👴🏻👵🏼👦🏼👵🏼👵🏼👴🏻<br>
+			👩🏿👵🏼👵🏼👵🏼👵🏼👵🏼👵🏼👦🏼👧🏽<br>
+			👵🏼👵🏼👨🏾👴🏻👶🏻👴🏻👵🏼👧🏽👵🏼👦🏼<br>
+			👶🏻👩🏿👨🏾👩🏿👨🏾👨🏾👶🏻👨🏾👴🏻👨🏾👨🏾<br>
+			👵🏼👵🏼👴🏻👨🏾👨🏾👵🏼👴🏻👦🏼👨🏾👦🏼👴🏻👩🏿<br>
+			👵🏼👵🏼👧🏽👵🏼👶🏻👧🏽👴🏻👩🏿👴🏻👵🏼👦🏼👧🏽👧🏽<br>
+		</div><!--end anthroEmojis-->
+		<div id="anthroLetters">
+			A<br>
+			N T<br>
+			H R O<br>
+			P O C E<br>
+			N T R I C<br>
+			I T I E S A<br>
+			N T H R O P O<br>
+			C E N T R I C I<br>
+			T I E S A N T H R<br>
+			O P O C E N T R I C<br>
+			I T I E S A N T H R O<br>
+			P O C E N T R I C I T I<br>
+			E S A N T H R O P O C E N<br>
+		</div><!--end anthroLetters-->
+		<div id="anthroDefinition">
+			<u>Anthropocentricities</u>:<br> 1. Regarding humans as the central<br> element of the universe. //<br> 2. Interpreting reality exclusively<br> in terms of human values and<br> experience.
+		</div><!--end anthroDefintion-->
+		<div id="anthroEmojisSmall">
+			👧🏽👨🏾👵🏼👴🏻👵🏼👵🏼👵🏼👦🏼👧🏽👧🏽<br>
+			👨🏾👩🏿👵🏼👵🏼👩🏿👵🏼👵🏼👨🏾👴🏻<br>
+			👵🏼👵🏼👵🏼👴🏻👵🏼👶🏻👦🏼👵🏼<br>
+			👵🏼👴🏻👶🏻👧🏽👵🏼👵🏼👨🏾<br>
+			👶🏻👶🏻👵🏼👶🏻👵🏼👶🏻<br>
+			👴🏻👨🏾👦🏼👵🏼👦🏼<br>
+			👴🏻👵🏼👶🏻👵🏼<br>
+			👵🏼👧🏽👦🏼<br>
+			👴🏻👨🏾<br>
+			👴🏻
+		</div><!--end anthroEmojisSmall-->
+	<!--END ANTHROPOCENTRICITIES-->
+
+	<!--BUCKMINSTERFULLERENE-->
+		<div id="buckminsterEmojis">
+			🔬👨🏽‍🔬👨🏽‍🔬🔬👩🏾‍🔬🔬🔬⚗️⚗️⚗️👨🏽‍🔬⚗️<br>
+			⚗️⚗️👩🏾‍🔬⚗️🔬👩🏾‍🔬🔬👩🏾‍🔬👩🏾‍🔬👨🏽‍🔬👩🏾‍<br>
+			🔬👨🏽‍🔬👩🏾‍🔬⚗️👩🏾‍🔬👩🏾‍🔬👩🏾‍🔬🔬⚛️🔬<br>
+			👨🏽‍🔬⚛️⚗️👨🏽‍🔬⚛️⚗️⚛️🔬🔬<br>
+			🔬👩🏾‍🔬👩🏾‍🔬🔬⚛️🔬⚗️⚛️<br>
+			🔬👨🏽‍🔬⚗️👩🏾‍🔬👩🏾‍🔬⚗️⚗️<br>
+			⚛️🔬👩🏾‍🔬🔬🔬👩🏾<br>
+			‍🔬🔬👩🏾‍🔬👨🏽‍🔬⚛️<br>
+			⚗️🔬🔬⚗️<br>
+			🔬👩🏾‍🔬⚛️<br>
+			🔬👩🏾‍<br>
+			🔬<br>
+		</div><!--end buckminsterEmojis-->
+		<div id="buckminsterLetters">
+			B U C K M I N S T E R F<br>
+			U L L E R E N E B U C<br>
+			K M I N S T E R F U<br>
+			L L E R E N E B U<br>
+			C K M I N S T E<br>
+			R F U L L E R<br>
+			E N E B U C<br>
+			K M I N S<br>
+			T E R F<br>
+			U L L<br>
+			E R<br>
+			E
+		</div><!--end buckminsterLetters-->
+		<div id="buckminsterDefinition">
+			<u>Buckminsterfullerene</u>: A form of<br> carbon having molecules of 60<br> atoms arranged in a polyhedron<br> resembling a geodesic sphere.
+		</div><!--end buckminsterDefinition-->
+		<div id="buckminsterEmojisSmall">
+			🔬<br>
+			👩🏾‍🔬👨🏽‍🔬<br>
+			👩🏾‍🔬👩🏾‍🔬⚛️<br>
+			👩🏾‍🔬🔬⚛️⚛️<br>
+			🔬👩🏾‍🔬👩🏾‍🔬👩🏾‍🔬🔬<br>
+			👨🏽‍🔬🔬🔬👨🏽‍🔬👨🏽‍🔬👩🏾‍🔬<br>
+			⚗️🔬⚗️👨🏽‍🔬🔬⚗️🔬<br>
+			👩🏾‍🔬👩🏾‍🔬🔬⚛️🔬⚗️👩🏾‍🔬🔬<br>
+			👩🏾‍🔬⚛️⚗️🔬⚛️⚛️🔬⚗️⚗️<br>
+			⚗️👨🏽‍🔬🔬⚗️👩🏾‍🔬⚗️⚗️⚛️👩🏾‍🔬🔬<br>
+			👩🏾‍🔬⚛️⚗️🔬⚛️⚛️🔬⚗️⚗️👨🏽‍🔬👨🏽‍🔬<br>
+			👩🏾‍🔬👩🏾‍🔬🔬⚛️🔬⚗️👩🏾‍🔬🔬👩🏾‍🔬👨🏽‍🔬🔬🔬<br>
+		</div><!--end buckminsterEmojisSmall-->
+	<!--END BUCKMINSTERFULLERENE-->
+	<!--CRYSTALLOGRAPHICALLY-->
+		<div id="crystalEmojis">
+			👨🏿‍🔬💎<br>
+			💍💎🔮<br>
+			💎💎👩🏻‍🔬👨🏿‍🔬<br>
+			💍💍💠💠💎<br>
+			💎👩🏻‍🔬🔮👩🏻‍🔬👨🏿‍🔬💎<br>
+			🔮🔮💠🔮💍⚛️⚛️<br>
+			🔮💎⚛️💠⚛️🔮💎👩🏻‍🔬<br>
+			🔮🔮💎💎💎👨🏿‍🔬⚛️💎👩🏻‍🔬<br>
+			🔮⚛️👨🏿‍🔬🔮💍💎💎💠💍💎<br>
+			⚛️⚛️🔮💍💠💎🔮⚛️🔮💠💍<br>
+			🔮💍💎⚛️💠💍💠💎👨🏿‍🔬👩🏻‍🔬⚛️👨🏿‍🔬<br>
+			⚛️💍💍👨🏿‍🔬🔮💍👨🏿‍🔬💎👩🏻‍🔬⚛️👩🏻‍🔬💎👨🏿‍🔬<br>
+		</div><!--end crystalEmojis-->
+		<div id="crystalLetters">
+			R Y<br> 
+			S T A<br> 
+			L L O G<br>
+			R A P H I<br>
+			C A L L Y C<br>
+			R Y S T A L L<br>
+			O G R A P H I C<br>
+			A L L Y C R Y S T<br>
+			A L L O G R A P H I<br>
+			C A L L Y C R Y S T A<br>
+			L L O G R A P H I C A L<br>
+			L Y C R Y S T A L L O G R
+		</div><!--end crystalLetters-->
+		<div id="crystalDefinition">
+			<u>Crystallographically</u>: The experimental<br> science of determining the arrangement<br> of atoms in the crystalline solids.
+		</div><!--end crystalDefinition-->
+		<div id="crystalEmojisSmall">
+			👨🏿‍🔬💎⚛️👨🏿‍🔬💍💍👨🏿‍🔬⚛️💍💠🔮💠💍<br>
+			👨🏿‍🔬💠👩🏻‍🔬⚛️💍👨🏿‍🔬🔮👨🏿‍🔬👩🏻‍🔬👨🏿‍🔬🔮👩🏻‍🔬<br>
+			🔮⚛️👩🏻‍🔬👩🏻‍🔬⚛️💠🔮💎👩🏻‍🔬💎👩🏻‍🔬<br>
+			💍👩🏻‍🔬💠👨🏿‍🔬👨🏿‍🔬👨🏿‍🔬👨🏿‍🔬💎👩🏻‍🔬👨🏿‍🔬<br>
+			💎🔮⚛️🔮💠💎👩🏻‍🔬⚛️💎<br>
+			💠💎👨🏿‍🔬⚛️💎👨🏿‍🔬💠👨🏿‍🔬<br>
+			💍👩🏻‍🔬👩🏻‍🔬🔮🔮💎💎<br>
+			⚛️👨🏿‍🔬💠👨🏿‍🔬🔮👩🏻‍🔬<br>
+			💎💎👩🏻‍🔬💠🔮<br>
+			👨🏿‍🔬⚛️💠💍<br>
+			👩🏻‍🔬🔮💍<br>
+			💍💠<br>
+			🔮<br>
+		</div><!--end crystalEmojisSmall-->
+	<!--END CRYSTALLOGRAPHICALLY-->
+	<!--DEPARTMENTALIZATIONS-->
+		<div id="departmentEmojis">
+			⚙️⛏️🔨🔧🔩🔩🔨🔧🔩🔨⚙️⛏️<br>
+			⚙️⛏️⛏️⚙️🔧🔨🔧⚙️⛏️🔩⛏️<br>
+			🔨⛏️🔧🔩⛏️🔨⚙️🔨🔩⛏️<br>
+			🔩⚙️🔩🔩🔨⚙️⛏️🔨⚙️<br>
+			⛏️🔧⛏️🔩🔩🔩⚙️⛏️<br>
+			⛏️⚙️🔨🔧🔩⚙️🔩<br>
+			⚙️🔨⛏️🔩🔧🔧<br>
+			🔨⚙️⚙️🔧⚙️<br>
+			⚙️⛏️⛏️🔩<br>
+			🔩🔧⚙️<br>
+			🔩⛏️<br>
+			🔩<br>
+		</div><!--end departmentEmojis--> 
+		<div id="departmentLetters">
+			D E P A R T M E N T A L<br>
+			I Z A T I O N S D E P<br>
+			A R T M E N T A L I<br>
+			Z A T I O N S D E<br>
+			P A R T M E N T<br>
+			A L I Z A T I<br>
+			O N S D E P<br>
+			A R T M E<br>
+			N T A L<br>
+			I Z A<br>
+			T I<br>
+			O<br>
+		</div><!--end departmentLetters-->
+		<div id="departmentDefinition">
+			<u>Departmentalization</u>: Manner<br> or practice in which related<br> individual tasks and their<br> allocation to work groups<br> is combined, to form a<br> specialized functional area<br> that is distinct from other<br> functional areas in an<br> organization.
+		</div><!--end departmentDefinition-->
+		<div id="departmentEmojisSmall">
+			🔩<br>
+			🔩⛏️<br>
+			⛏️🔩🔧<br>
+			⛏️🔧⛏️⛏️<br>
+			🔨🔧⛏️🔩🔧<br>
+			🔨⚙️⛏️🔩⛏️🔩<br>
+			🔩⚙️⛏️⛏️⛏️🔧⛏️<br>
+			⛏️🔧🔨⛏️🔧⚙️🔨<br>
+			⚙️⛏️🔨🔩🔨🔨⛏️🔨<br>
+			⚙️⚙️🔩⚙️⚙️🔩🔩⛏️⚙️<br>
+			⛏️⚙️🔩🔩🔧🔨⛏️🔧🔩⛏️<br>
+			⛏️🔧⛏️⛏️🔨🔩🔩⚙️🔧⛏️⛏️<br>
+			🔩⛏️🔨⛏️🔩🔧🔧🔨🔧🔩🔧⛏<br>
+		</div><!--end departmentEmojisSmall-->
+	<!--END DEPARTMENTALIZATIONS-->
+	<!--EXTEMPORANEOUSNESSES-->
+		<div id="extempEmojis">
+			🎹🎺<br>
+			🎤🎺🎹🎹<br>
+			🎷🎷🎷🎹🎷🥁<br>
+			🥁🥁🥁🎺🎺🥁🎹🎹<br>
+			🎤🎷🎷🎤🎹🎤🎺🥁🥁🎤<br>
+			🥁🥁🎹🥁🎺🎹🥁🎹🎷🎤🎹🎤<br>
+			🥁🎺🥁🎹🎤🎺🎹🎹🎹🎤🎹🎹🎤🎺
+		</div><!--end extempEmojis-->
+		<div id="extempLetters">
+			E X<br>
+			T E M P<br>
+			O R A N E O<br>
+			U S N E S S E S<br>
+			E X T E M P O R A N<br>
+			E O U S N E S S E S E X<br>
+			T E M P O R A N E O U S N E
+		</div><!--end extempLetters-->
+		<div id="extempDefinition">
+			<u>Extemporaneousnesses</u>: Composed,<br>
+			 performed, or uttered on the<br> spur of the moment.
+		</div><!--end extempDefinition-->
+		<div id="extempEmojisSmall">
+			🎷🎷🎤🎺🎤🎺🥁🎺🎹🎹🎷🎺🥁🎤<br>
+			🎺🎤🥁🥁🎺🥁🎹🎤🎤🎤🎹🎤<br>
+			🎺🎷🎤🎷🎷🎷🎤🎤🎹🥁<br>
+			🎷🎷🎹🎤🎹🎹🎹🎹<br>
+			🎤🥁🎤🎺🎤🎹<br>
+			🎷🎹🥁🎹<br>
+			🎹🎤
+		</div><!--end extempEmojisSmall-->
+	<!--END EXTEMPORANEOUSNESSES-->
+	<!--FORETHOUGHTFULNESSES-->
+	<div id="forethoughtEmojis">
+		💭🤔💭🤔💡✔️💭💡📈📈🤔🤔✔️💡<br>
+		💡✔️📈💡✔️✔️✔️📈🤔✔️🤔✔️<br>
+		📈✔️✔️🤔📈💡🤔🤔💭✔️<br>
+		✔️💭💭📈💡🤔📈💭<br>
+		💡🤔💡💭💭🤔<br>
+		✔️💡✔️📈<br>
+		💭🤔
+	</div><!--end forethoughtEmojis-->
+	<div id="forethoughtLetters">
+		F O R E T H O U G H T F U L<br>
+		N E S S E S F O R E T H<br>
+		O U G H T F U L N E<br>
+		S S E S F O R E<br>
+		T H O U G H<br>
+		T F U L<br>
+		N E
+	</div><!--end forethoughtLetters-->
+	<div id="forethoughtDefinition">
+		<u>Forethoughtfulnesses</u>: 1. A thinking or<br> planning out in advance. // 2. Consideration<br> for the future.
+	</div><!--end forethoughtDefinition-->
+	<div id="forethoughtEmojisSmall">
+		✔️🤔<br>
+		📈✔️✔️📈<br>
+		💭💭💡💡💭✔️<br>
+		✔️✔️💭✔️✔️🤔💭✔️<br>
+		💡✔️📈💡💡✔️💡💭💡✔️<br>
+		🤔💡💡📈📈📈💭💡💡💡💭📈<br>
+		📈📈🤔🤔🤔💭🤔📈🤔✔️🤔📈💭🤔
+	</div><!--end forethoughtEmojisSmall-->
+<!--END FORETHOUGHTFULNESSES-->
+<!--ARCHAEOASTRONOMIES-->
+	<div id="archaeoEmojis">
+		🌓🌘<br>
+		🌑🌓🌕🌕<br>
+		🌘🌖🌘🌖🌗🌘<br>
+		🌑🌑🌗🌕🌑🌒🌑🌔<br>
+		🌕🌔🌔🌗🌒🌗🌑🌑🌘🌓<br>
+		🌑🌑🌗🌖🌓🌗🌓🌒🌗🌗🌕🌒<br>
+		🌖🌖🌗🌖🌒🌒🌔🌕🌘🌔🌖🌖🌔🌖
+	</div><!--end archaeoEmojis-->
+	<div id="archaeoLetters">
+		A R<br>
+		C H A E<br>
+		O A S T R O<br>
+		N O M I E S A R<br>
+		C H A E O A S T R O<br>
+		N O M I E S A R C H A E<br>
+		O A S T R O N O M I E S A R
+	</div><!--end archaeoLetters-->
+	<div id="archaeoDefinition">
+		<u>Archaeoastronomies</u>: the investigation<br> of the astronomical knowledge of<br> prehistoric cultures.
+	</div><!--end archaeoDefinition-->
+	<div id="archaeoEmojisSmall">
+		🌘🌘🌘🌕🌖🌗🌕🌖🌖🌔🌕🌒🌒🌓<br>
+		🌖🌗🌓🌘🌔🌗🌕🌘🌔🌑🌒🌘<br>
+		🌘🌘🌒🌕🌗🌓🌒🌒🌘🌕<br>
+		🌔🌘🌑🌒🌘🌗🌖🌔<br>
+		🌑🌘🌖🌔🌕🌘<br>
+		🌓🌗🌒🌓<br>
+		🌘🌗
+	</div><!--end archaeoEmojisSmall-->
+<!--END ARCHAEOASTRONOMIES-->
+<!--BLOODTHIRSTINESSES-->
+	<div id="bloodthirstEmojis">
+		😡😡😡👺👺👺😡😈👹😡😡👺😈🦇<br>
+		👹🦇🦇👺😈👺😡🦇😡🦇👹😈<br>
+		😈👹👹👺👹🦇🦇🦇😈😡<br>
+		👺😈😈👹🦇😈😈😡<br>
+		🦇😡🦇👹🦇🦇<br>
+		😡😡😈🦇<br>
+		👺👹
+	</div><!--end bloodthirstEmojis-->
+	<div id="bloodthirstLetters">
+		B L O O D T H I R S T I N E<br>
+		S S E S B L O O D T H I<br>
+		R S T I N E S S E S<br>
+		B L O O D T H I<br>
+		R S T I N E<br>
+		S S E S<br>
+		B L
+	</div><!--end bloodthirstLetters-->
+	<div id="bloodthirstDefinition">
+		<u>Bloodthirstinesses</u>: Eager for or marked by the<br> shedding of blood, violence, or killing.
+	</div><!--end bloodthirstDefinition-->
+	<div id="bloodthirstEmojisSmall">
+		👺😈<br>
+		😈👺😈😈<br>
+		😡😈👹👹👺👺<br>
+		🦇👹😈👹👺👺😡🦇<br>
+		😡🦇👺😡👹👺😡🦇👺😡<br>
+		🦇😈😈😈😡👺😡😡👺👺🦇🦇<br>
+		👺😡🦇👹😈👹😡👹😈🦇😈😡🦇🦇
+	</div><!--end bloodthirstEmojisSmall-->
+<!--END BLOODTHIRSTINESSES-->
+<!--CANTANKEROUSNESSES-->
+	<div id="cantankEmojis">
+		✋🏼🙅🏽‍♂️<br>
+		🚫👎🏾🚫✋🏼<br>
+		🙅🏽‍♂️✋🏼👎🏾🙅🏽‍♂️👎🏾😤<br>
+		😤🙅🏽‍♂️🙅🏽‍♂️🙅🏽‍♂️🙅🏽‍♂️✋🏼👎🏾✋🏼<br>
+		🚫👎🏾🚫✋🏼😤🙅🏽‍♂️✋🏼✋🏼👎🏾✋🏼<br>
+		✋🏼👎🏾😤🙅🏽‍♂️🚫✋🏼🙅🏽‍♂️🚫😤✋🏼🙅🏽‍♂️👎🏾<br>
+		🙅🏽‍♂️🙅🏽‍♂️✋🏼🚫👎🏾🙅🏽‍♂️🚫🚫😤✋🏼🙅🏽‍♂️✋🏼😤🙅🏽‍♂️<br>
+	</div><!--end cantankEmojis-->
+	<div id="cantankLetters">
+		C A<br>
+		N T A N<br>
+		K E R O U S<br>
+		N E S S E S C A<br>
+		N T A N K E R O U S<br>
+		N E S S E S C A N T A N<br>
+		K E R O U S N E S S E S C A
+	</div><!--end cantankLetters-->
+	<div id="cantankDefinition">
+		<u>Cantankerousnesses</u>: Disagreeable to deal<br> with; contentious; peevish.
+	</div><!--end cantankDefinition-->
+	<div id="cantankEmojisSmall">
+		🙅🏽‍♂️🚫✋🏼🙅🏽‍♂️😤🙅🏽‍♂️✋🏼👎🏾🚫😤✋🏼🚫🚫✋🏼<br>
+		✋🏼🙅🏽‍♂️🚫😤🚫👎🏾👎🏾🙅🏽‍♂️😤🙅🏽‍♂️🚫✋🏼<br>😤😤😤😤👎🏾🚫👎🏾🙅🏽‍♂️🙅🏽‍♂️🚫<br>
+		🚫✋🏼👎🏾😤✋🏼🙅🏽‍♂️😤✋🏼<br>
+		✋🏼👎🏾😤🚫😤🚫<br>
+		🙅🏽‍♂️🚫😤✋🏼<br>
+		👎🏾😤<br>
+	</div>
+<!--END CANTANKEROUSNESSES-->
+<!--DENOMINALATIONISMS-->
+	<div id="denomEmojis">
+		💳💵💷💵💵💷💳💳💶💳💷💷💳💵<br>
+		💵💷💵💶💳💳💴💳💴💶💷💳<br>
+		💵💵💴💶💶💶💶💵💴💴<br>
+		💴💴💶💳💵💴💷💴<br>
+		💳💳💶💳💶💶<br>
+		💶💷💵💶<br>
+		💶💴
+	</div><!--end denomEmojis-->
+	<div id="denomLetters">
+		D E N O M I N A L A T I O N<br>
+		I S M S D E N O M I N A<br>
+		L A T I O N I S M S<br>
+		D E N O M I N A<br>
+		L A T I O N<br>
+		I S M S<br>
+		D E
+	</div><!--end denomLetters-->
+	<div id="denomDefinition">
+		<u>Denominalationisms</u>: Devotion to denominational<br> principles or interests: A value or size of a<br> series of values or sizes.
+	</div><!--end denomDefinition-->
+	<div id="denomEmojisSmall">
+		💶💴<br>
+		💵💴💶💶<br>
+		💳💳💶💳💳💶<br>
+		💶💷💳💷💴💷💶💳<br>
+		💳💷💶💳💷💴💵💴💷💴<br>
+		💵💴💳💳💳💳💷💵💷💶💷💷<br>
+		💶💶💶💴💵💷💷💴💴💴💴💴💶💶
+	</div><!--end denomEmojisSmall-->
+<!--END DENOMINALATIONISMS-->
+<!--EVAPOTRANSPIRATION-->
+	<div id="evapoEmojis">
+		⛅💧<br>
+		⛅🌥️🌤️⛅<br>
+		⛅☁️🌥️⛅⛅☁️<br>
+		🌤️🌥️🌥️🌥️🌤️☁️☁️💧<br>
+		☁️💧💧🌤️💧💧☁️🌤️💧🌤️<br>
+		🌤️💧☁️⛅🌤️⛅🌥️🌤️💧⛅💧☁️<br>
+		🌥️⛅⛅💧☁️⛅☁️🌤️🌤️🌥️💧☁️🌥️🌤️
+	</div><!--end evapoEmojis-->
+	<div id="evapoLetters">
+		E V<br>
+		A P O T<br>
+		R A N S P I<br>
+		R A T I O N E V<br>
+		A P O T R A N S P I<br>
+		R A T I O N E V A P O T<br>
+		R A N S P I R A T I O N E V
+	</div><!--end evapoLetters-->
+	<div id="evapoDefinition">
+		<u>Evapotranspiration</u>: the process<br> by which water is transferred<br> from the land to the atmosphere<br> by evaporation from the soil and<br> other surfaces and by transpiration<br> from plants.
+	</div><!--end evapoDefinition-->
+	<div id="evapoEmojisSmall">
+		☁️💧⛅💧🌤️⛅🌥️🌤️⛅⛅💧💧⛅☁️<br>
+		🌤️💧🌥️🌤️⛅⛅💧⛅⛅🌥️🌥️🌤️<br>
+		☁️💧🌤️🌤️🌤️☁️⛅🌥️🌥️🌤️<br>
+		🌥️🌥️🌥️☁️⛅⛅☁️🌥️<br>
+		💧🌥️⛅💧🌥️⛅<br>
+		🌥️☁️☁️💧<br>
+		☁️💧
+	</div><!--end evapoEmojisSmall-->
+<!--END EVAPOTRANSPIRATION-->
+<!--FEEBLEMINDEDNESSES-->
+	<div id="feebleEmojis">
+		❓💭⁉️⁉️😕❓💭🤔⁉️😕❓💭🤔⁉️<br>
+		⁉️🤔💭⁉️💭🤔❓🤔😕💭⁉️❓<br>
+		🤔🤔❓😕💭❓😕😕❓💭<br>
+		💭🤔😕😕❓😕❓💭<br>
+		💭😕🤔💭❓🤔<br>
+		😕⁉️😕💭<br>
+		🤔💭
+	</div><!--end feebleEmojis-->
+	<div id="feebleLetters">
+		F E E B L E M I N D E D N E<br>
+		S S E S F E E B L E M I<br>
+		N D E D N E S S E S<br>
+		F E E B L E M I<br>
+		N D E D N E<br>
+		S S E S<br>
+		F E
+	</div><!--end feebleLetters-->
+	<div id="feebleDefinition">
+		<u>Feeblemindednesses</u>: 1. Mentally deficient.<br> 2. Foolish, stupid.
+	</div><!--end feebleDefinition-->
+	<div id="feebleEmojisSmall">
+		🤔🤔<br>
+		❓😕😕😕❓<br>
+		⁉️🤔⁉️❓⁉️💭<br>
+		😕😕😕💭💭❓❓❓😕🤔<br>
+		😕💭😕⁉️❓😕🤔😕❓🤔😕⁉️<br>
+		🤔🤔🤔💭🤔💭💭❓⁉️🤔⁉️😕<br>
+		😕😕⁉️😕❓💭🤔💭❓😕❓💭💭❓<br>
+	</div><!--end feebleEmojisSmall-->
+<!--END FEEBLEMINDEDNESSES-->
+<!--ATRABILIOUSNESSES-->
+	<div id="atrabEmojis">
+		😔😭<br>
+		😔😭☹️☹️<br>
+		😭😔😩😢😩😢<br>
+		😭😔☹️😭😔😩😔😭<br>
+		☹️😩😢😩😭😢😔☹️☹️😭<br>
+		😩😢😭😔😢😔😭😢😭😔😩😔<br>
+		😢😭😔😭☹️☹️😭😩☹️☹️😔😩😩☹️
+	</div><!--end atrabEmojis-->
+	<div id="atrabLetters">
+		A T<br>
+		R A B I<br>
+		L I O U S N<br>
+		E S S E S A T R<br>
+		A B I L I O U S N E<br>
+		S S E S A T R A B I L I<br>
+		O U S N E S S E S A T R A B
+	</div><!--end atrabLetters-->
+	<div id="atrabDefinition">
+		<u>Atrabiliousnesses</u>: 1. Inclined to<br> melancholy. 2. Having a peevish<br> disposition; surly.
+	</div><!--end atrabDefinition-->
+	<div id="atrabEmojisSmall">
+		😭☹️😔😔😭😢😭😭😢😔😢😢😩😔<br>
+		😔😩☹️😭😔☹️☹️☹️☹️☹️☹️😩<br>
+		☹️☹️😩☹️😔😢☹️☹️😭😔<br>
+		😔😔😩☹️😭☹️😩😭<br>
+		😔☹️😭😢☹️😭<br>
+		😭😩😢😢<br>
+		😭😢
+	</div><!--end atrabEmojisSmall-->
+<!--END ATRABILIOUSNESSES-->
+<!--BLOODGUILTINESSES-->
+	<div id="bloodguiltEmojis">
+		🔪<br>
+		🔪☠️<br>
+		🔪☠️☠️<br>
+		🗡️🔪🗡️💣<br>
+		💣💣🔪🗡️💣<br>
+		🗡️⚔️💣💣🔪⚔️<br>
+		🗡️☠️🔪💣🗡️💣☠️<br>
+		☠️☠️☠️💣🔪💣⚔️☠️<br>
+		🔪☠️⚔️☠️💣🔪💣🔪💣<br>
+		⚔️☠️🔪☠️💣🗡️🗡️⚔️☠️💣<br>
+		🗡️🔪🗡️🔪☠️⚔️⚔️☠️⚔️☠️💣<br>
+		🔪💣🗡️⚔️⚔️🗡️🔪🗡️💣🗡️🗡️🗡️<br>
+		⚔️💣⚔️💣🗡️⚔️⚔️☠️☠️💣🔪🔪💣<br>
+	</div><!--end bloodguildEmojis-->
+	<div id="bloodguiltLetters">
+		B<br>
+		L O<br>
+		O O D<br>
+		G U I L<br>
+		T I N E S<br>
+		S E S B L O<br>
+		O D G U I L T<br>
+		I N E S S E S B<br>
+		L O O D G U I L T<br>
+		I N E S S E S B L O<br>
+		O D G U I L T I N E S<br>
+		S E S B L O O D G U I L<br>
+		T I N E S S E S B L O O D
+	</div><!--end bloodguiltLetters-->
+	<div id="bloodguiltDefinition">
+		<u>Bloodguiltinesses</u>: Guilt resulting from bloodshed.
+	</div><!--end bloodGuiltDefinition-->
+	<div id="bloodguiltEmojisSmall">
+		🗡️🔪🗡️🔪☠️⚔️⚔️☠️⚔️☠️💣☠️💣<br>
+		⚔️☠️🔪☠️💣🗡️🗡️⚔️☠️💣☠️💣<br>
+		☠️☠️☠️💣🔪💣⚔️☠️☠️🔪🗡️<br>
+		🔪☠️⚔️☠️💣🔪🔪💣🗡️💣<br>
+		🗡️⚔️💣💣🔪🔪⚔️🔪💣<br>
+		🗡️☠️🔪💣🗡️☠️☠️🔪<br>
+		🗡️🔪🗡️🗡️⚔️🔪🔪<br>
+		💣💣🔪🗡️☠️💣💣<br>
+		🗡️☠️☠️💣⚔️<br>
+		☠️🔪🗡️💣<br>
+		🔪🔪💣<br>
+		☠️🗡️<br>
+		⚔️
+	</div><!--end bloodguiltEmojisSmall-->
+<!--END BLOODGUILTINESSES-->
+<!--CRASHWORTHINESSES-->
+	<div id="crashEmojis">
+		🚚🚗🚛🚘🚐🚚🚛🚘🚗🚗🚘🚛<br>
+		🚛🚛🚘🚐🚐🚚🚐🚘🚗🚐🚘<br>
+		🚚🚘🚚🚗🚚🚗🚘🚗🚐🚐<br>
+		🚐🚗🚘🚚🚘🚚🚗🚛🚘<br>
+		🚐🚘🚐🚗🚗🚚🚐🚘<br>
+		🚘🚐🚐🚛🚐🚚🚘<br>
+		🚛🚚🚐🚗🚚🚐<br>
+		🚗🚗🚛🚐🚚<br>
+		🚚🚗🚘🚗<br>
+		🚗🚗🚚<br>
+		🚐🚛<br>
+		🚐
+	</div><!--end crashEmojis-->
+	<div id="crashLetters">
+		C R A S H W O R T H I N<br>
+		I N E S S E S C R A S<br>
+		H W O R T H I N E S<br>
+		S E S C R A S H W<br>
+		O R T H I N E S<br>
+		S E S C R A S<br>
+		H W O R T H<br>
+		I N E S S<br>
+		E S C R<br>
+		A S H<br>
+		W O<br>
+		R
+	</div><!--end crashLetters-->
+	<div id="crashDefinition">
+		<u>Crashworthinesses</u>: The degree to which a vehicle will protect its occupants from the effects of an accident.
+	</div><!--end crashDefinition-->
+	<div id="crashEmojisSmall">
+		🚛<br>
+		🚘🚗<br>
+		🚐🚘🚐<br>
+		🚛🚘🚛🚚<br>
+		🚐🚛🚐🚘🚛<br>
+		🚐🚛🚛🚐🚘🚘<br>
+		🚚🚐🚐🚚🚗🚚🚚<br>
+		🚘🚘🚐🚘🚛🚐🚛🚐<br>
+		🚘🚐🚘🚐🚛🚛🚐🚐🚘<br>
+		🚐🚐🚘🚘🚛🚐🚐🚛🚐🚚<br>
+		🚚🚘🚐🚐🚚🚘🚐🚚🚚🚚🚗<br>
+		🚗🚘🚚🚚🚐🚐🚘🚘🚐🚛🚗🚘
+	</div><!--end crashEmojisSmall-->
+<!--END CRASHWORTHINESSES-->
+<!--DEMYTHOLOGIZATION-->
+	<div id="demythEmojis">
+		👽👻<br>
+		💀😈👻<br>
+		😈😈👽🦄<br>
+		👻🦄🦄🦄💀<br>
+		👻👻💀👻😈👻<br>
+		👽😈👻👻😈🦄😈<br>
+		👽👽👽🦄👽🦄👽😈<br>
+		🦄🦄👽😈💀💀😈👻👽<br>
+		👻👽💀😈👽👽😈💀👽💀<br>
+		👽🦄🦄😈😈👽👽💀👽👽💀<br>
+		👽💀👻😈👻🦄😈😈🦄👽💀🦄<br>
+		👻😈👻💀🦄💀😈👻😈🦄👽👽😈
+	</div><!--end demythEmojis-->
+
+	<div id="demythLetters">
+		D E<br>
+		M Y T<br>
+		H O L O<br>
+		G I Z A T<br>
+		I O N D E M<br>
+		Y T H O L O G<br>
+		I Z A T I O N D<br>
+		E M Y T H O L O G<br>
+		I Z A T I O N D E M<br>
+		Y T H O L O G I Z A T<br>
+		I O N D E M Y T H O L O<br>
+		G I Z A T I O N D E M Y T
+	</div><!--end demythLetters-->
+	<div id="demythDefinition">
+		<u>Demythologization</u>: Reinterpret (a subject or text) so that it is free of mythical or heroic elements.
+	</div><!--end demythDefinition-->
+	<div id="demythEmojisSmall">
+		👽😈👽🦄💀💀👻👻👻👻😈💀👻<br>
+		💀👻😈💀😈👽💀👽🦄🦄👻😈<br>
+		💀👻🦄💀💀💀👻💀👻👻👽<br>
+		👻👻🦄🦄💀💀💀💀👽👽<br>
+		👻👽🦄🦄👽👻👻👽💀<br>
+		😈🦄👽💀😈💀💀💀<br>
+		💀🦄💀😈🦄🦄👽<br>
+		👻👻💀🦄😈👻<br>
+		👻👽💀💀👻<br>
+		🦄💀😈💀<br>
+		🦄😈👻<br>
+		🦄🦄<br>
+		👽
+	</div><!--end demythEmojisSmall-->
+<!--END DEMYTHOLOGIZATION-->
+<!--EVERLASTINGNESSES-->
+	<div id="everEmojis">
+		⏰🕰️⏰⌚⏳⏳🕰️⌚⏱️🕰️⏰⏰<br>
+		⏳⌚⏳⏳⌚🕰️🕰️⏱️⏰⏰⏱️<br>
+		⏰🕰️⏱️⏱️⏳⌚🕰️⏳⌚⌚<br>
+		⏳🕰️⏱️⏰🕰️⏱️⏳⏳⏳<br>
+		⌚⌚⏳⌚🕰️⏳🕰️⏳<br>
+		⏱️🕰️⏳⏱️⌚🕰️🕰️<br>
+		⏰⏰🕰️⏰⏳⌚<br>
+		⌚⌚⏱️⏰🕰️<br>
+		⏳🕰️⏱️🕰️<br>
+		🕰️⏱️🕰️<br>
+		⏱️⌚<br>
+		🕰️
+</div><!--end everEmojis-->
+	<div id="everLetters">
+		E V E R L A S T I N G N<br>
+		E S S E S E V E R L A<br>
+		S T I N G N E S S E<br>
+		S E V E R L A S T<br>
+		I N G N E S S E<br>
+		S E V E R L A<br>
+		S T I N G N<br>
+		E S S E S<br>
+		E V E R<br>
+		L A S<br>
+		T I<br>
+		N
+	</div><!--end everLetters-->
+	<div id="everDefinition">
+		<u>Everlastingnesses</u>: Lasting or enduring through all time.
+	</div><!--end everDefinition-->
+	<div id="everEmojisSmall">
+		⏱️<br>
+		⏳⏳<br>
+		⏱️🕰️⌚<br>
+		⏰⌚⏳🕰️<br>
+		⏰🕰️⏰🕰️⌚<br>
+		⏱️🕰️⏱️🕰️⏱️⌚<br>
+		⏱️⏰🕰️⌚⏰⏰⌚<br>
+		🕰️⏱️⏱️⌚⏰🕰️⏳⌚<br>
+		⏳⌚⏳⏰⏰🕰️⏰⏳⌚<br>
+		⏳⏰⏱️⏰⌚⏱️⏱️🕰️⏳⌚<br>
+		⌚⏱️⏳⏰⏰⏰⌚⏰⌚⏳⏱️<br>
+		⏱️🕰️⏱️⏱️🕰️⏳⏱️⏳⌚⏳⌚⏳
+	</div><!--end everEmojisSmall-->
+<!--END EVERLASTINGNESSES-->
+<!--FLORIFEROUSNESSES-->
+<div id="flower01">🌸</div>
+	<div id="florifLetters">OPEN<br>
+							YOUR<br>
+							CONSOLE</div>
+
+<div id="flower02">🌹</div>
+	<div id="instructions02">SET<br>
+							DOCK<br>
+							TO<br>
+							RIGHT</div>
+
+<div id="flower03">🌺</div>
+	<button onclick = "loop()" id="instructions04">PLAY
+	</button>
+
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+
+<!--JQUERY-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!--JQuery script-->
+	<script>
+		//ANTHROPOCENTRICITIES
+		$('#anthroLetters').click(function () {
+			$('#anthroEmojis').css("display", "inline");
+		});
+
+		$('#anthroEmojis').click(function () {
+			$('#anthroEmojis').css("display", "none");
+		});
+
+		//BUCKMINSTERFULLERENE
+		$('#buckminsterLetters').click(function () {
+			$('#buckminsterEmojis').css("display", "inline");
+		});
+
+		$('#buckminsterEmojis').click(function () {
+			$('#buckminsterEmojis').css("display", "none")
+		});
+
+		//CRYSTALLOGRAPHICALLY
+		$('#crystalLetters').click(function () {
+			$('#crystalEmojis').css("display", "inline");
+		});
+
+		$('#crystalEmojis').click(function () {
+			$('#crystalEmojis').css("display", "none")
+		});
+
+		//DEPARTMENTALIZATIONS
+		$('#departmentLetters').click(function () {
+			$('#departmentEmojis').css("display", "inline");
+		});
+
+		$('#departmentEmojis').click(function () {
+			$('#departmentEmojis').css("display", "none");
+		});
+
+		//EXTEMPORANEOUSNESSES
+		$('#extempLetters').click(function () {
+			$('#extempEmojis').css("display", "inline");
+		});
+
+		$('#extempEmojis').click(function () {
+			$('#extempEmojis').css("display", "none");
+		});
+
+		//FORETHOUGHTFULNESSES
+		$('#forethoughtLetters').click(function () {
+			$('#forethoughtEmojis').css("display", "inline");
+		});
+
+		$('#forethoughtEmojis').click(function () {
+			$('#forethoughtEmojis').css("display", "none");
+		});
+
+		//ARCHAEOASTRONOMIES
+		$('#archaeoLetters').click(function () {
+			$('#archaeoEmojis').css("display", "inline");
+		});
+
+		$('#archaeoEmojis').click(function () {
+			$('#archaeoEmojis').css("display", "none");
+		});
+
+		//BLOODTHIRSTINESSES
+		$('#bloodthirstLetters').click(function () {
+			$('#bloodthirstEmojis').css("display", "inline");
+		});
+
+		$('#bloodthirstEmojis').click(function () {
+			$('#bloodthirstEmojis').css("display", "none");
+		});
+
+		//CANKTANKEROUSNESSES
+		$('#cantankLetters').click(function () {
+			$('#cantankEmojis').css("display", "inline");
+		});
+
+		$('#cantankEmojis').click(function () {
+			$('#cantankEmojis').css("display", "none");
+		});
+
+		//DENOMINALATIONISMS
+		$('#denomLetters').click(function () {
+			$('#denomEmojis').css("display", "inline");
+		});
+
+		$('#denomEmojis').click(function () {
+			$('#denomEmojis').css("display", "none");
+		});
+
+		//EVAPOTRANSPIRATION
+		$('#evapoLetters').click(function () {
+			$('#evapoEmojis').css("display", "inline");
+		});
+
+		$('#evapoEmojis').click(function () {
+			$('#evapoEmojis').css("display", "none");
+		});
+
+		//FEEBLEMINDEDNESSES
+		$('#feebleLetters').click(function () {
+			$('#feebleEmojis').css("display", "inline");
+		});
+
+		$('#feebleEmojis').click(function () {
+			$('#feebleEmojis').css("display", "none");
+		});
+
+		//ATRABILIOUSNESSES
+		$('#atrabLetters').click(function () {
+			$('#atrabEmojis').css("display", "inline");
+		});
+
+		$('#atrabEmojis').click(function () {
+			$('#atrabEmojis').css("display", "none");
+		});
+
+		//BLOODGUILTINESSES
+		$('#bloodguiltLetters').click(function () {
+			$('#bloodguiltEmojis').css("display", "inline");
+		});
+
+		$('#bloodguiltEmojis').click(function () {
+			$('#bloodguiltEmojis').css("display", "none");
+		});
+
+		//CRASHWORTHINESSES
+		$('#crashLetters').click(function () {
+			$('#crashEmojis').css("display", "inline");
+		});
+
+		$('#crashEmojis').click(function () {
+			$('#crashEmojis').css("display", "none");
+		});
+
+		//DEMYTHOLOGIZATION
+		$('#demythLetters').click(function () {
+			$('#demythEmojis').css("display", "inline");
+		});
+
+		$('#demythEmojis').click(function () {
+			$('#demythEmojis').css("display", "none");
+		});
+
+		//EVERLASTINGNESSES
+		$('#everLetters').click(function () {
+			$('#everEmojis').css("display", "inline");
+		});
+
+		$('#everEmojis').click(function () {
+			$('#everEmojis').css("display", "none");
+		});
+
+		//FLORIFEROUSNESSES WORD
+		$('#flower01').click(function () {
+			$('#florifLetters').css("display", "inline");
+			$('#flower01').css("display", "none");
+		});
+
+		$('#flower02').click(function () {
+			$('#instructions02').css("display", "inline");
+			$('#flower02').css("display", "none");
+		})
+
+		$('#flower03').click(function () {
+			$('#instructions04').css("display", "inline");
+			$('#flower03').css("display", "none");
+		})
+
+		
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	</script><!--end jquery-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
