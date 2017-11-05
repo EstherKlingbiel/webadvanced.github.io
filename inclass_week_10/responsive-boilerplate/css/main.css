@@ -1,0 +1,56 @@
+.author {
+	border-style: outset;
+	border-width: 5px;
+	margin-left: 35vw;
+	margin-right: 40vw;
+}
+
+body {
+   background-color: white;
+   cursor: default;
+   margin: 0px;  
+}
+
+.descriptions {
+	border-style: outset;
+	border-width: 5px;
+	font-family: helvetica;
+	font-size: 15px;
+	margin-bottom: .5vh;
+	margin-left: 2vw;
+	margin-right: 2vw;
+	margin-top: .5vh;
+}
+
+h1 {
+	background-color: rgb(206, 206, 206);
+	border-style: inset;
+	border-width: 10px;
+	font-family: helvetica;
+	font-size: 45px;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	padding: none;
+	text-align: center;	
+}
+
+h2 {
+	font-family: helvetica;
+	font-size: 30px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.titles {
+	background-color: rgb(206, 206, 206);
+	border-style: outset;
+	border-width: 15px;
+	cursor: default;
+	font-family: helvetica;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: .1vw;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	text-align: center;	
+}
