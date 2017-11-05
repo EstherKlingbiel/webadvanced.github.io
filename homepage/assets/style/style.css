@@ -101,6 +101,46 @@ body {
 	width: 15px;
 }
 
+#inClass {
+	background-image: url('../images/space02.jpg');
+	background-repeat: repeat-y;
+	color: white;
+	cursor: pointer;
+	float: left;
+	font-size: 30px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+#inClassAssignment1 {
+	font-size: 20px;
+	margin-left: 60px;
+}
+
+.inClassWeekListImage {
+	background-image: url('../images/space08.jpg');
+	background-position-x: 35px;
+	background-repeat: repeat-y;
+}
+
+#inClassWeek10 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	margin-left: 35px;	
+}
+
+#inClassWeek10List {
+	background-image: url('../images/space11.jpg');
+	background-position-x: 60px;
+	background-repeat: no-repeat;
+	color: white;
+	display: none;
+}
+
+#inClassWeek10ListParent {
+	display: none;
+}
+
 #index {
 	color: white;
 	font-size: 20px;
