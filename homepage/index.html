@@ -90,7 +90,7 @@
 				</div><!--end week7ListParent-->
 
 				<div id="week8ListParent"><!--parent div for week 8-->
-					<span id="week8" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_08</span><br><!--week 8 here-->
+					<span id="week8" class="rainbowHover inClassWeekListImage"><img src="assets/images/folder.png"> WEEK_08</span><br><!--week 8 here-->
 						<div id="week8List">
 							<!--Assignment 8: Prototype-->
 							<span id="assignment8" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_08/dreamCollage.html" target="_blank" class="rainbowHover">ASSIGNMENT_08/DREAMSCAPE_PROTOTYPE</a></span><br><!--end assignment 8-->
@@ -99,7 +99,24 @@
 			</div><!--end weekListImage-->
 	</div><!--End projects-->
 	<!--END PROJECTS-->
-	
+
+	<!--IN-CLASS PROJECTS-->
+	<div id="inClass"><!--container div for in class projects-->
+		<div id="inClassList"><!--"In-Class Projects" here-->
+			<span class="rainbowHover"><img src="assets/images/folder.png" id="folder"> IN-CLASS_PROJECTS</span><br>
+		</div><!--end inClassList-->
+			<div class="inClassWeekListImage"><!--div to hold image-->
+				<div id="inClassWeek10ListParent"><!--parent div for week 10-->
+					<span id="inClassWeek10" class="rainbowHover inClassWeekListImage"><img src="assets/images/folder.png"> WEEK_10</span><br><!--"Week 10" here-->
+						<div id="inClassWeek10List">
+							<!--In-Class Assignment 1: NY Times RSS Feed-->
+							<span id="inClassAssignment1" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="inclass_week_10/responsive-boilerplate/index.html" target="_blank" class="rainbowHover">IN-CLASS_ASSIGNMENT_01/NEW_YORK_TIMES_SPACE&COSMOS_RSS_FEED</a></span><br><!--end in-class assignment 1-->
+						</div><!--end inClassWeek10List-->
+				</div><!--end inClassWeek10ListParent-->
+			</div><!--end inClassWeekListImage-->
+	</div><!--end inClass container div-->
+	<!--END IN-CLASS PROJECTS-->
+
 	<!--LINKS-->
 	<div id="links"><!--Container div for links-->
 		<div id="linksLabel"><!--"Links" here-->
@@ -193,6 +210,23 @@
 			$('#linksLabel').click(function () {
 				$('#linksList').toggle();
 			});
+
+			//Toggle in-class weeks 
+			$('#inClassList').click(function () {
+				$('#inClassWeek10ListParent').toggle();
+			});
+
+			//turn on in-class week 10
+			$('#inClassWeek10ListParent').click(function () {
+				$('#inClassWeek10List').css("display", "block");
+			})
+
+
+
+
+
+
+			
 		</script><!--End JQuery script-->
 </html>
 
