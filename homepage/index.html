@@ -92,7 +92,7 @@
 				<div id="week8ListParent"><!--parent div for week 8-->
 					<span id="week8" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_08</span><br><!--week 8 here-->
 						<div id="week8List">
-							<!--Assignment 8: Prototype-->
+							<!--Assignment 8: Dreamscape Prototype-->
 							<span id="assignment8" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_08/dreamCollage.html" target="_blank" class="rainbowHover">ASSIGNMENT_08/DREAMSCAPE_PROTOTYPE</a></span><br><!--end assignment 8-->
 						</div><!--end week8List-->
 				</div><!--end week8ListParent-->
@@ -100,10 +100,22 @@
 				<div id="week9ListParent"><!--parent div for week 9-->
 					<span id="week9" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_09</span><br><!--week 9 here-->
 						<div id="week9List">
-							<!--Assignment 9: Prototype-->
+							<!--Assignment 9: Dreamscape Prototype-->
 							<span id="assignment9" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_09/dreamCollage.html" target="_blank" class="rainbowHover">ASSIGNMENT_09/DREAMSCAPE_PROTOTYPE</a></span><br><!--end assigment 9-->
 						</div><!--end week9List-->
 				</div><!--end week9ListParent-->
+
+				<div id="week10ListParent"><!--parent div for week 10-->
+					<span id="week10" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_10</span><br>
+					<!--week 10 here-->
+						<div id="week10List">
+							<!--assignment 10.1: dreamscape-->
+							<span id="assignment101" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_10_dreamCollage/dreamCollage.html" target="_blank" class="rainbowHover">ASSIGNMENT_10.1/DREAMSCAPE</a></span><br><!--end assignment 10.1-->
+
+							<!--assignment 10.2: Google Maps API-->
+							<span id="assignment102" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_10_nationsSketch/nationsSketch.html" target="_blank" class="rainbowHover">ASSIGNMENT_10.2/GOOGLE_MAPS_API/AMERICAN_NATIONS</a></span><br><!--end assignment 10.2-->
+						</div><!--end week10List-->
+				</div><!--end week10ListParent-->
 			</div><!--end weekListImage-->
 	</div><!--End projects-->
 	<!--END PROJECTS-->
@@ -173,8 +185,10 @@
 				$('#week7ListParent').toggle();
 				$('#week8ListParent').toggle();
 				$('#week9ListParent').toggle();
+				$('#week10ListParent').toggle();
 			});
 
+		//PROJECTS
 			//Turn on week 1. DOES NOT TOGGLE; SEE BUG FIX AT END OF CODE
 			$('#week1ListParent').click(function () {
 				$('#week1List').css("display", "block");
@@ -218,13 +232,20 @@
 			//turn on week 9
 			$('#week9ListParent').click(function () {
 				$('#week9List').css("display", "block");
+			});
+
+			//turn on week 10
+			$('#week10ListParent').click(function () {
+				$('#week10List').css("display", "block");
 			})
 
+		//LINKS
 			//Toggle links
 			$('#linksLabel').click(function () {
 				$('#linksList').toggle();
 			});
 
+		//IN-CLASS PROJECTS
 			//Toggle in-class weeks 
 			$('#inClassList').click(function () {
 				$('#inClassWeek10ListParent').toggle();
@@ -233,14 +254,7 @@
 			//turn on in-class week 10
 			$('#inClassWeek10ListParent').click(function () {
 				$('#inClassWeek10List').css("display", "block");
-			})
-
-
-
-
-
-
-			
+			});
 		</script><!--End JQuery script-->
 </html>
 
