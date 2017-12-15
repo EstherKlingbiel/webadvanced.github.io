@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        animation-name: fadeIn;/*fade-in on page load*/
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        animation-delay: none;
+      }
+      @keyframes fadeIn {/*fade-in opacity settings*/
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+  /*css for search box*/
+      #description {
+        font-family: Roboto;
+        font-weight: 300;
+      }
+
+      /*"search a location" text style. refered to as placeholder*/
+      ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #aaaaaa;
+      }
+
+      ::-moz-placeholder { /* Firefox 19+ */
+        color: #aaaaaa;
+      }
+
+      :-ms-input-placeholder { /* IE 10+ */
+        color: #aaaaaa;
+      }
+      
+      :-moz-placeholder { /* Firefox 18- */
+        color: #aaaaaa;
+      }
+
+      /*autofill style for search entry*/
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      /*hide infowindow content unless something is typed*/
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 30px;
+        margin-right: 12px;
+      }
+
+      /*style drop-down menu background*/
+      .pac-container {
+        background-color: #3e4654;
+        opacity: 0.8;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      /*search box style*/
+      #pac-input {
+        background-color: #3e4654;
+        color: #efefef;
+        opacity: 0.8;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        height: 25px;
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-top: 10px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 30%;
+        border: none;
+
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      /*style drop-down menu search results*/
+      .pac-item {
+        border-top: 0px;
+      }
+
+      .pac-item-query {
+        font-family: Roboto;
+        color: #aaaaaa;
+      }
+
+      .pac-logo:after {
+        display: none;
+      }
+
+      #title {
+        color: #000;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+
+      }
+
+      #target {
+        width: 345px;
+      }
+      /*end css for search box*/
+
+      /*project info stylers*/
+      #legend {
+        margin: 10px 10px 0 0;
+        cursor: pointer;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #3e4654;
+        opacity: 0.8;
+        font-size: 13px;
+        font-weight: 300;
+        font-family: Roboto;
+        padding: 6px 12px; 
+      }
+
+      #questionMark {
+        color: #aaaaaa;
+      }
+
+      #projectInfo {
+        display: none;
+        width: 45vw;
+        text-align: justify;
+        color: #aaaaaa;
+      }
+
+      .nationsDivs {
+        position: fixed;
+        bottom: 30px;
+        left: 12px;
+        width: 100vw;
+      }
+
+    .nationsStyle {
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      color: #aaaaaa;
+    }
+
+    .indent {
+      display: block;
+      text-indent: 25px;
+    }
+
+    .link {
+      color: #aaaaaa;
+    }
+
+    #deepSouth {
+      background-color: #A50119;
+    }
+
+    #elNorte {
+      background-color: #90B7DE;
+      color: #3e4654;
+    }
+
+    #farWest {
+      background-color: #EBE3BE;
+      color: #3e4654;
+    }
+
+    #greaterAppalachia {
+      background-color: #FF0033;
+    }
+
+    #leftCoast {
+      background-color: #006DAF;
+    }
+
+    #newFrance {
+      background-color: #00315C;
+    }
+
+    #midlands {
+      background-color: #3191CB;
+      color: #3e4654;
+    }
+
+    #newNetherland {
+      background-color: #90B8D2;
+      color: #3e4654;
+    }
+
+    #spanishCaribbean {
+      background-color: #818286;
+      color: #3e4654;
+    }
+
+    #tidewater {
+      background-color: #EECC8C;
+      color: #3e4654;
+    }
+
+    #yankeedom {
+      background-color: #004879;
+    }
+
+    .deepSouthDescription {
+      position: fixed;
+      bottom: 65px;
+      left: 12px;
+      width: 50vw;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      color: #aaaaaa;
+      background-color: #A50119;
+      text-align: justify;
+      display: none;
+    }
+
+    .elNorteDescription {
+      position: fixed;
+      bottom: 65px;
+      left: 12px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #90B7DE;
+      color: #3e4654;
+    }
+
+    .farWestDescription {
+      position: fixed;
+      bottom: 65px;
+      left: 12px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #EBE3BE;
+      color: #3e4654;
+    }
+
+    .greaterAppalachiaDescription {
+      position: fixed;
+      bottom: 65px;
+      left: 80px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #FF0033;
+      color: #aaaaaa;
+    }
+
+    .leftCoastDescription {
+      position: fixed;
+      bottom: 65px;
+      left: 213px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #006DAF;
+      color: #aaaaaa;
+    }
+
+    .newFranceDescription {
+      position: fixed;
+      bottom: 65px;
+      left: 322px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #00315C;
+      color: #aaaaaa;
+    }
+
+    .midlandsDescription {
+      position: fixed;
+      bottom: 65px;
+      left: 414px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #3191CB;
+      color: #3e4654;
+    }
+
+    .newNetherlandDescription {
+      position: fixed;
+      bottom: 65px;
+      left: 539px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #90B8D2;
+      color: #3e4654;
+    }
+
+    .spanishCaribbeanDescription {
+      position: fixed;
+      bottom: 65px;
+      right: 0px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #818286;
+      color: #3e4654;
+    }
+
+    .tidewaterDescription {
+      position: fixed;
+      bottom: 65px;
+      right: 0px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #EECC8C;
+      color: #3e4654;
+    }
+
+    .yankeedomDescription {
+      position: fixed;
+      bottom: 65px;
+      right: 0px;
+      width: 50vw;
+      cursor: default;
+      float: left;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+      font-size: 13px;
+      font-weight: 300;
+      font-family: Roboto;
+      padding: 6px 12px; 
+      text-align: justify;
+      display: none;
+      background-color: #004879;
+      color: #aaaaaa;
+    }
+    </style>
+  </head>
+  <body>
+
+    <!--HTML for search box-->
+    <input id="pac-input" class="controls" type="text" placeholder="Find a Location">
+    <!--end HTML for search box-->
+    <!--div for map-->
+    <div id="map"></div>
+    <!--end div for map-->
+
+    <!--project info/legend here-->
+    <div id="legend">
+      <span id="questionMark">?</span>
+      <div id=projectInfo>
+       <span>The map you see here is based on Colin Woodard's 2012 book <i><a href="https://www.amazon.com/American-Nations-History-Regional-Cultures/dp/0143122029" target="_blank" class="link">American Nations: A History of the Eleven Rival Regional Cultures of North America</a></i>.<br></span>
+
+        <span class="indent">The United States has never been a united country. America as we know it today was an amalgamation of European colonies of vastly different empires, all with distinct cultural values and practices. Such cultures defined and separated the colonies they belonged to. After the country's founding, during the major waves of immigration, Scots, Italians, and Irishmen further contributed to the cultural ideologies of the U.S. that still exist today.<br></span>
+
+        <span class="indent">Such differences reside in our politics, our social values, and our religions. Woodard argues that this is why our country has historically and contemporarily continuously engaged in ideological and economic warfare&mdash;and the mosaic of American voices, despite public opinion, far supersedes the conservative versus liberal binary.<br></span>
+
+        <span class="indent">Americans are taught that only the boundary lines of 50 states geographically separate the United States. But Woodard argues that these boundaries are arbitrary. He instead proposes 11 nation-states, mapped here in this project. While some may be allied in the areas of politics and economics, they are all vastly different from one another, grounded in separate founding ethnic groups and cultures.<br></span>
+
+       <span class="indent">These nation-states are mapped below. Click on each one in the key to read what Woodard writes about their histories and origins. You can allow geolocation on this map to see what "nation" you're currently in. Or, enter a location into the search bar. The markers on the map represent the bottom 10&#37; of counties by socioeconomic status&mdash;specifically, the counties with the highest percentages of poverty (out of total county population) in the United States. The inclusion of these markers was an attempt to see if the economic policies of each "nation" affected the poverty rates of the counties that made up each nation.</span>
+      </div><!--end projectInfo-->
+    </div><!--end legend-->
+
+    <!--key markers-->
+    <div class="nationsDivs" width="100%">
+      <div id="deepSouth" class="nationsStyle">The Deep South</div>
+      <div id="elNorte" class="nationsStyle">El Norte</div>
+      <div id="farWest" class="nationsStyle">The Far West</div>
+      <div id="greaterAppalachia" class="nationsStyle">Greater Appalachia</div>
+      <div id="leftCoast" class="nationsStyle">The Left Coast</div>
+      <div id="newFrance" class="nationsStyle">New France</div>
+      <div id="midlands" class="nationsStyle">The Midlands</div>
+      <div id="newNetherland" class="nationsStyle">New Netherland</div>
+      <div id="spanishCaribbean" class="nationsStyle">The Spanish Caribbean</div>
+      <div id="tidewater" class="nationsStyle">Tidewater</div>
+      <div id="yankeedom" class="nationsStyle">Yankeedom</div>
+    </div><!--end nationsDivs-->
+
+    <!--DEEP SOUTH-->
+    <div class="deepSouthDescription">
+      <div id="deepSouthText">
+        <span>"<b>The Deep South</b> was founded by Barbados slave lords as a West Indies&ndash;style slave society, a system so cruel and despotic that it shocked even its seventeenth-century English contemporaries. For most of American history, the region has been a bastion of white supremacy, aristocratic privilege, and a version of classical Republicanism modeled on the slave states of the ancient world, where democracy was a privilege of the few and enslavement the natural lot of the many. It remains the least democratic of the nations, a one-party entity where race remains the primary determinant of one's political affiliations.</span>
+
+        <span class="indent">Beginning from its Charleston beachhead, the Deep South spread apartheid and authoritarianism across the Southern lowlands. Its territorial ambitions in Latin America frustrated, in the 1860s it dragged the federation into a horrific war in an attempt to form its own nation-state, backed by reluctant allies in Tidewater and some corners of Appalachia. After successfully resisting a Yankee-led occupation, it became the center of the states' rights movement, racial segregation, and labor and environmental deregulation. It's also the wellspring of African American culture, and four decades after it was forced to allow blacks to vote, it remains politically polarized on racial grounds. Having forged an uneasy 'Dixie' coalition with Appalachia and Tidewater in the 1870s, the Deep South is locked in an epic battle with Yankeedom and its Left Coast and New Netherland allies for the future of the federation." (28&mdash;29)</span> 
+      </div><!--end deepSouthText-->
+    </div><!--end deepSouthDescription-->
+    <!--END DEEP SOUTH-->
+
+    <!--EL NORTE-->
+    <div class="elNorteDescription">
+      <div id="elNorteText">
+        <span>"<b>El Norte</b> is the oldest of the Euro-American nations, dating back to the late sixteenth century, when the Spanish empire founded Monterry, Saltillo, and other northern outposts. Today, this resurgent nation spreads from the United States&mdash;Mexico border for a hundred miles or more in either direction. Overwhelmingly Hispanic, it has long been a hybrid between Anglo&ndash; and Spanish America, with an economy oriented toward the United States rather than Mexico City.<br></span>
+
+        <span class="indent">Most Americans are well aware that the United States' southern borderlands are a place apart, where Hispanic language, culture, and societal norms dominate. Fewer realize that among Mexicans, the people of Mexico's northern border states are seen as overly Americanized. <i>Norte&#x00F1;os</i> ('northerners') have a well-earned reputation for being more independent, self-sufficient, adaptable, and work-centered than Mexicans from the more densely populated hierarchical society of Mexican core.<br></span>
+
+        <span class="indent">Split by an increasingly militarized border, El Norte in some ways resembles Germany during the Cold War: two peoples with a common culture separated from one another by a large wall. Despite the wishes of their political masters in Washington, D.C., and Mexico City, many <i>norte&#x00F1;os</i> would prefer to federate to form a third national state of their own. Charles Truxillo, a professor of Chicano studies at the University of New Mexico, has predicted this sovereign state will be a reality by the end of the twenty-first century. He's even given it a name: La Rep&#250;blica del Norte. But regardless of any future nation-state aspirations, El Norte is going to be an increasingly influential force within the United States. The Pew Research Center predicts that by 2050 the proportion of the U.S. population that self-identifies as Hispanic will reach 29 percent, more than double the figure in 2005. Much of that growth will take place in El Norte, where Hispanics already constitute a majority, increasing the region's relative influence in state and national politics." (30&mdash;32)</span>
+      </div><!--end elNorteText-->
+    </div><!--end elNorteDescription-->
+    <!--END EL NORTE-->
+
+    <!--FAR WEST-->
+    <div class="farWestDescription">
+      <div id="farWestText">
+        <span>"Climate and geography have shaped all of the nations to some extent, but <b>the Far West</b> is the only one where environmental factors truly trumped ethnic ones. High, dry, and remote, the interior west presented conditions so severe that they effectively destroyed those who tried to apply the farming and lifestyle techniques used in other nations. With minor exceptions, this vast region couldn't be effectively colonized without the deployment of vast industrial resources: railroads, heavy mining equipment, ore smelters, dams, and irrigation systems. As a result, the colonization of much of the region was facilitated and directed by large corporations headquartered in distant New York, Boston, Chicago, or San Francisco, or by the federal government itself, which controlled much of the land. Even if they didn't work for one of the companies, settlers were dependent on the railroads for transportation of goods, people, and products to and from far-off markets and manufacturing centers. Unfortunately for the settlers, their region was treated as an internal colony, exploited and despoiled for the benefit of the seaboard nations. Despite significant industrialization during World War II and the Cold War, the region remains in a state of semidependency. Its political class tends to revile the federal government for interfering in its affairs&mdash;a stance that often aligns it with the Deep South&mdash;while demanding it continue to receive federal largesse. It rarely challenges its corporate masters, however, who retain near&ndash;Gilded Age levels of influence over Far Western affairs." (33&mdash;35)</span>
+      </div><!--end farWestText-->
+    </div><!--end farWestDescription-->
+    <!--END FAR WEST-->
+
+    <!--GREATER APPALAChIA-->
+    <div class="greaterAppalachiaDescription">
+      <div id="greaterAppalachiaText">
+        <span>"<b>Greater Appalachia</b> was founded in the early eighteenth century by wave upon wave of rough, bellicose settlers from the war-ravaged borderlands of Northern Ireland, northern England, and the Scottish lowlands. Lampooned as 'rednecks,' 'hillbillies,' 'crackers,' and 'white trash,' these clannish Scots-Irish, Scots, and northern English frontiersmen spread across the highland South.</span>
+
+        <span class="indent">In the British Isles, this culture had formed in a state of near-constant war and upheaval, fostering a warrior ethic and a deep commitment to individual liberty and personal sovereignty. Intensely suspicious of aristocrats and social reformers alike, these American Borderlanders despised Yankee teachers, Tidewater lords, and Deep Southern aristocrats. In the Civil War much of the region fought for the Union, with secession movements in western Virginia (creating West Virginia), eastern Tennessee, and northern Alabama. During Reconstruction the region resisted the Yankee effort to liberate African slaves, driving it into a lasting alliance with its former enemies: the overlords of the Tidewater and Deep Southern lowlands of Dixie. The Borderlander's combative culture has provided a large proportion of the nation's military, from officers like Andrew Jackson and Douglas MacArthur to the enlisted men fighting in Afghanistan and Iraq. They also gave the continent bluegrass and country music, stock car racing, and Evangelical fundamentalism. Greater Appalachia's people have long had a poor awareness of their cultural origins. One scholar of the Scots-Irish has called them 'the people with no name.' When U.S. census takers ask Appalachian people what their nationality or ethnicity is, they almost always answer 'American' or even 'Native American.'" (27&mdash;28)</span>
+      </div><!--end greaterAppalachiaText-->
+    </div><!--end greaterAppalachiaDescription-->
+    <!--END GREATER APPALACHIA-->
+
+    <!--LEFT COAST-->
+    <div class="leftCoastDescription">
+      <div id="leftCoastText">
+        <span>"A Chile-shaped nation pinned between the Pacific and the Cascade and Coast mountain ranges, <b>the Left Coast</b> extends in a strip from Monterey, California, to Juneau, Alaska. A wet region of staggering natural beauty, it was originally colonized by two groups: merchants, missionaries, and woodsmen from New England (who arrived by sea and controlled the towns) and farmers, prospectors, and fur traders from Greater Appalachia (who arrived by wagon and dominated the countryside). Originally slated by Yankees to become a 'New England on the Pacific'&mdash;and the target of a dedicated Yankee missionary effort&mdash;the Left Coast retained a strong strain of New England intellectualism and idealism even as it embraced a culture of individual fulfillment.</span><br>
+
+        <span class="indent">Today it combines the Yankee faith in good government and social reform with a commitment to individual self-exploration and discovery, a combination that has proven to be fecund. The Left Coast has been the birthplace of the modern environmental movement and the global information revolution, and the cofounder (along with New Netherland) of the gay rights movement, the peace movement, and the cultural revolution of the 1960s. The closest ally of Yankeedom, it battles constantly against the libertarian-corporate agenda of its neighbor, the Far West." (32&mdash;33)</span>
+      </div><!--end leftCoastText-->
+    </div><!--end leftCoastDescription-->
+    <!--END LEFT COAST-->
+
+    <!--NEW FRANCE-->
+    <div class="newFranceDescription">
+      <div id="newFranceText">
+        <span>"<b>New France</b> is the most overtly nationalistic of the nations. Founded in the early 1600s, New French culture blends the folkways of ancien r&eacute;gime northern French peasantry with the traditions and values of the aboriginal people they encountered in northeastern North America. Down-to-earth, egalitarian, and consensus-driven, the New French have recently been demonstrated by pollsters to be far and away the most liberal people on the continent. Long oppressed by their British overlords, the New French have, since the mid-twentieth century, imparted many of their attitudes to the Canadian federation, where multiculturalism and negotiated consensus are treasured." (29&mdash;30)</span>
+      </div><!--end newFranceText-->
+    </div><!--end newFranceDescription-->
+    <!--END NEW FRANCE-->
+
+    <!--THE MIDLANDS-->
+    <div class="midlandsDescription">
+      <div id="midlandsText">
+        <span>"Arguably the most 'American' of the nations, <b>the Midlands</b> was founded by English Quakers, who welcomed people of many nations and creeds to their utopian colonies on the shores of Delaware Bay. Pluralistic and organized around the middle class, the Midlands spawned the culture of Middle America and the Heartland, where ethnic and ideological purity have never been a priority, government has been seen as an unwelcome intrusion, and political opinion has been moderate, even apathetic. The only part of British North America to have a non-British majority in 1775, the Midlands has long been an ethnic mosaic, with people of German descent&mdash;not 'Anglo-Saxons'&mdash;comprising the largest group since the late 1600s. Like Yankees, the Midlanders believe society should be organized to benefit ordinary people, but they are extremely skeptical of top-down governmental intervention, as many of their ancestors fled from European tyrannies. The Midlands is home to a dialect long considered 'standard American,' a bellwether for national political attitudes, and the key 'swing vote' in every national debate from the abolition of slavery to the 2008 presidential contest.</span>
+
+        <span class="indent">While less cognizant of its national identity, the Midlands is nonetheless an enormously influential moderating force in continental politics, as it agrees with only part of each of its neighbors' strident agendas." (25&mdash;26)</span>
+      </div><!--end midlandsText-->
+    </div><!--end midlandsDescription-->
+    <!--END THE MIDLANDS-->
+
+    <!--NEW NETHERLAND-->
+    <div class="newNetherlandDescription">
+      <div id="newNetherlandText">
+        <span>"While short-lived, the seventeenth-century Dutch colony of <b>New Netherland</b> had a lasting impact on the continent's development by laying down the cultural DNA for what is now Greater New York City. Modeled on its Dutch namesake, New Amsterdam was from the start a global commercial trading society: multi-ethnic, multi-religious, speculative, materialistic, mercantile, and free trading, a raucous, not entirely democratic city-state where no one ethnic or religious group has ever truly been in charge. New Netherland also nurtured two Dutch innovations considered subversive by most other European states at the time: a profound tolerance of diversity and an unflinching commitment to the freedom of inquiry. Forced on the other nations at the Constitutional Convention, these ideals have been passed down to us as the Bill of Rights.</span>
+
+        <span class="indent">Despite the defeat of the Dutch by the English in 1664, New Netherland has retained its fundamental values and societal model, having long ago replaced Amsterdam as the leading world center of Western commerce, finance, and publishing. As a center of global commerce, New Netherland has long been the front door for immigrants, who've made it the most densely populated part of North America. Its population&mdash;19 million at this writing&mdash;is greater than that of many European nations, and its influence over this continent's media, publishing, fashion and intellectual and economic life is hard to overstate." (24&mdash;25)</span>
+      </div><!--end newNetherlandText-->
+    </div><!--end newNetherlandDescription-->
+    <!--END NEW NETHERLAND-->
+
+    <!--SPANISH CARIBBEAN-->
+    <div class="spanishCaribbeanDescription">
+      <div id="spanishCaribbeanText">
+        <span>Surprisingly, Woodard chooses not to discuss the Spanish Caribbean in his book. The logic for this, he reasons, is that while there are Spanish Caribbean territories in the United States (namely, southern Florida), its "core territory" does not actually exist within the United States. He writes, "Cuban-dominated South Florida is the financial and transportation hub of the Spanish-speaking Caribbean." (43)</span>
+      </div><!--end spanishCaribbeanText-->
+    </div><!--end spanishCaribbeanDescription-->
+    <!--END SPANISH CARIBBEAN-->
+
+    <!--TIDEWATER-->
+    <div class="tidewaterDescription">
+      <div id="tidewaterText">
+        <span>"<b>Tidewater</b>, the most powerful nation during the colonial period and the Early Republic, has always been a fundamentally conservative region, with a high value placed on respect for authority and tradition and very little on equality or public participation in politics. Such attitudes are not surprising, given that it was founded by the younger sons of southern English gentry, who aimed to reproduce the semifeudal manorial society of the English countryside, where economic, political, and social affairs were run by and for landed aristocrats. The self-identified 'Cavaliers' largely succeeded in their aims, turning the [region] into a country gentleman's paradise, with indentured servants and, later, slaves taking the part of the peasants.</span>
+
+        <span class="indent">Tidewater elites played a central role in the foundation of the United States and were responsible for many of the aristocratic inflections on the Constitution, including the Electoral College and Senate, whose members were to be appointed by legislators, not chosen by the electorate. But the region's power waned in the 1830s and 1840s, its elite generally following the lead of the planters of the ascendant Deep South in matters of national political importance. Today it is a nation in decline, rapidly losing its influence, cultural cohesion, and territory to its Midland neighbors. Its undoing was a matter of geography: it was blocked by rivals from expanding over the Appalachian Mountains." (26&mdash;27)</span>
+      </div><!--end tidewaterText-->
+    </div><!--end tidewaterDescription-->
+    <!--END TIDEWATER-->
+
+    <!--YANKEEDOM-->
+    <div class="yankeedomDescription">
+      <div id="yankeedomText">
+        <span>"<b>Yankeedom</b> was founded on the shores of Massachusetts Bay by radical Calvinists as a new Zion, a religious utopia in the New England wilderness. From the outset it was a culture that put great emphasis on education, local political control and the pursuit of the 'greater good' of the community, even if it required individual self-denial. Yankees have the greatest faith in the potential of government to improve people's lives, tending to see it as an extension of the citizenry, and a vital bulwark against the schemas of grasping aristocrats, corporations, or outside powers. For more than four centuries, Yankees have sought to build a more perfect society here on Earth through social engineering, relatively extensive citizen involvement in the political process, and the aggressive assimilation of foreigners. Settled by stable, educated families, Yankeedom has always had a middle-class ethos and considerable respect for intellectual achievement. Its religious zeal has waned over time, but not its underlying drive to imporve the world and the set of moral and social values that scholars have sometimes described as 'Secular Puritanism.'" (22&mdash;23)</span>
+      </div><!--end yankeedomText-->
+    </div><!--end yankeedomDescription-->
+    <!--END YANKEEDOM-->
+
+    <script>
+      var mapStyler = [
+      {elementType: 'geometry', stylers: [{color: '#718099'}]},
+       {
+         featureType: "administrative",
+         stylers: [
+           { visibility: "off" }
+         ]
+       },{
+         featureType: "poi",
+         stylers: [
+           { visibility: "off" }
+         ]
+       },{
+         featureType: "water",
+         elementType: "labels",
+         stylers: [
+           { visibility: "off" }
+         ]
+       },{
+         featureType: "road",
+         stylers: [
+           { visibility: "off" }
+         ]
+       }, {
+          featureType: "water",
+          elementType: "geometry",
+          stylers: [
+            {color: '#515c6d'}
+          ]
+       }, {
+          featureType: "transit",
+          stylers: [
+            {visibility: "off"}
+          ]
+       }
+     ];
+
+      //map and infowindow
+      var map, infoWindow;
+      //initAutocomplete instead of initMap so search box can autocomplete entries
+      function initAutocomplete() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          mapTypeControlOptions: {
+         mapTypeIds: ['mapStyler', google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.TERRAIN]
+       },
+          //center united states
+          center: {lat: 39.8283, lng: -98.5795 },
+          //zoom
+          zoom: 5,
+          mapTypeId: 'mapStyler',
+          fullscreenControl: false,
+          streetViewControl: false,
+          mapTypeControl: false,
+          zoomControl: false
+        });
+
+        //call infowindow
+        infoWindow = new google.maps.InfoWindow;
+         map.mapTypes.set('mapStyler', new google.maps.StyledMapType(mapStyler, { name: '11 Nations' }));
+          map.controls[google.maps.ControlPosition.TOP_RIGHT].push(legend);
+
+        // Create the search box and link it to the UI element.
+        //call #pac-input id
+        var input = document.getElementById('pac-input');
+        //create search box
+        var searchBox = new google.maps.places.SearchBox(input);
+        //position search box
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+        // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+           // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      
+    //Fusion table here: all U.S. counties
+    //create fusion table layer
+    var countiesLayer = new google.maps.FusionTablesLayer({
+        query: {
+          //select geometry column (geocode data for each county)
+          select: '\'geometry\'',
+          //fusion table address
+          from: '15bCrqDsYSypoVsxXcvMxR8e-EK1HMYkJ1zA0Yexy'
+          //style here (drawn from fusion table). Colors of counties defined by the "color" column with #FF colors. Opacity, boundary lines, etc. all set in fusion table. Refer to https://fusiontables.google.com/DataSource?docid=18A9l9ZrtHM6ybzthQRhA0EGq5pqlk4w8eMOJ0QzP#rows:id=1 for the fusion table.
+        }, options: {
+        styleId: 2,
+        templateId: 2
+        }, styles: [{
+          polygonOptions: {
+            fillOpacity: 0.3
+          }
+        }]
+       });
+    //set map here
+    countiesLayer.setMap(map);
+
+    //Fusion table here: Median household income and poverty rate by county.
+    //create fusion table layer
+    layer = new google.maps.FusionTablesLayer({
+      map: map,
+      heatmap: { enabled: false },
+      query: {
+        select: "col4",
+        from: "18BhnrvKNAMxeriLZc2W6Zmr_QxuQFgtxhENj5ebX",
+        where: ""
+      }, options: {
+        styleId: 2,
+        templateId: 2
+      } 
+    });
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('You are here!');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Please enable Geolocation.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script><!--end google maps API-->
+    <!--api link here-->
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQXVxoh7ywMQGZ5W77oMiU95kbTGKTpo4&libraries=places&callback=initAutocomplete"
+         async defer></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!--JQuery script-->
+      <script>
+        console.log("JQuery is working!");
+
+        //legend/project info toggles
+          $('#legend').mouseenter(function () {
+          $('#questionMark').toggle();
+          $('#projectInfo').toggle();
+          $('#projectInfo').css("cursor", "default");
+        });
+
+        $('#projectInfo').mouseleave(function () {
+          $('#projectInfo').css("display", "none");
+          $('#questionMark').css("display", "inline");
+        })
+        //end legend/project info toggles
+
+        //deep south toggles
+        $('#deepSouth').mouseenter(function () {
+          $('.deepSouthDescription').css("display", "block");
+
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        $('.deepSouthDescription').mouseleave(function () {
+          $('.deepSouthDescription').css("display", "none");
+
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        //end deep south toggles
+
+        //el norte toggles
+        $('#elNorte').mouseenter(function () {
+          $('.elNorteDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        $('.elNorteDescription').mouseleave(function () {
+          $('.elNorteDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        //end el norte toggles
+
+        //far west toggles
+        $('#farWest').mouseenter(function () {
+          $('.farWestDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        $('.farWestDescription').mouseleave(function () {
+          $('.farWestDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        //end far west toggles
+
+        //greater appalachia toggles
+        $('#greaterAppalachia').mouseenter(function () {
+          $('.greaterAppalachiaDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        $('.greaterAppalachiaDescription').mouseleave(function () {
+          $('.greaterAppalachiaDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        //end greater appalachia toggles
+
+        //left coast toggles
+        $('#leftCoast').mouseenter(function () {
+          $('.leftCoastDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        $('.leftCoastDescription').mouseleave(function () {
+          $('.leftCoastDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        //end left coast toggles
+
+        //new france toggles
+        $('#newFrance').mouseenter(function () {
+          $('.newFranceDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        $('.newFranceDescription').mouseleave(function () {
+          $('.newFranceDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+
+        //end new france toggles
+
+        //midlands toggles
+        $('#midlands').mouseenter(function () {
+          $('.midlandsDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        $('.midlandsDescription').mouseleave(function () {
+          $('.midlandsDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        //end midlands toggles
+
+        //new netherland toggles
+        $('#newNetherland').mouseenter(function () {
+          $('.newNetherlandDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        $('.newNetherlandDescription').mouseleave(function () {
+          $('.newNetherlandDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        //end new netherland toggles
+
+        //spanish caribbean toggles
+        $('#spanishCaribbean').mouseenter(function () {
+          $('.spanishCaribbeanDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        $('.spanishCaribbeanDescription').mouseleave(function () {
+          $('.spanishCaribbeanDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        //end spanish caribbean toggles
+
+        //tidewater toggles
+        $('#tidewater').mouseenter(function () {
+          $('.tidewaterDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+
+        $('.tidewaterDescription').mouseleave(function () {
+          $('.tidewaterDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.yankeedomDescription').css("display", "none");
+        });
+        //end tidewater toggles
+
+        //yankeedom toggles
+        $('#yankeedom').mouseenter(function () {
+          $('.yankeedomDescription').css("display", "block");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+        });
+        $('.yankeedomDescription').mouseleave(function () {
+          $('.yankeedomDescription').css("display", "none");
+
+          $('.deepSouthDescription').css("display", "none");
+          $('.elNorteDescription').css("display", "none");
+          $('.farWestDescription').css("display", "none");
+          $('.greaterAppalachiaDescription').css("display", "none");
+          $('.leftCoastDescription').css("display", "none");
+          $('.newFranceDescription').css("display", "none");
+          $('.midlandsDescription').css("display", "none");
+          $('.newNetherlandDescription').css("display", "none");
+          $('.spanishCaribbeanDescription').css("display", "none");
+          $('.tidewaterDescription').css("display", "none");
+        });
+        //end yankeedom toggles
+      </script>
+  </body>
+</html>
