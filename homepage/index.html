@@ -116,6 +116,15 @@
 							<span id="assignment102" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_10_nationsSketch/nationsSketch.html" target="_blank" class="rainbowHover">ASSIGNMENT_10.2/GOOGLE_MAPS_API/AMERICAN_NATIONS</a></span><br><!--end assignment 10.2-->
 						</div><!--end week10List-->
 				</div><!--end week10ListParent-->
+
+				<div id="week16ListParent"><!--parent div for week 16-->
+					<span id="week16" class="rainbowHover weekListImage"><img src="assets/images/folder.png"> WEEK_16</span><br>
+					<!--week 16 here-->
+						<div id="week16List">
+							<!--final assignment: 11 nations-->
+							<span id="assignment16" class="rainbowHover"><img src="assets/images/file.png" id="file"><a href="week_11/mapsapi.html" target="_blank" class="rainbowHover">FINAL_ASSIGNMENT/GOOGLE_MAPS_API/AMERICAN_NATIONS</a></span><br><!--end final assignment-->
+						</div><!--end week16List-->
+				</div><!--end week16ListParent-->
 			</div><!--end weekListImage-->
 	</div><!--End projects-->
 	<!--END PROJECTS-->
@@ -186,6 +195,7 @@
 				$('#week8ListParent').toggle();
 				$('#week9ListParent').toggle();
 				$('#week10ListParent').toggle();
+				$('#week16ListParent').toggle();
 			});
 
 		//PROJECTS
@@ -237,8 +247,13 @@
 			//turn on week 10
 			$('#week10ListParent').click(function () {
 				$('#week10List').css("display", "block");
-			})
+			});
 
+			//turn on week 16
+			$('#week16ListParent').click(function () {
+				$('#week16List').css("display", "block");
+			});
+			
 		//LINKS
 			//Toggle links
 			$('#linksLabel').click(function () {
