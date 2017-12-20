@@ -14,6 +14,27 @@
 		<span id="titleSpan"><a href="https://estherloui.se" target="_blank" class="rainbowHover">ESTHER_KLINGBIEL</a>/<a href="http://f17webadvanced.leigler.tk/" target="_blank" class="rainbowHover">WEB_ADVANCED:JAVASCRIPT</a>/INDEX</span>
 	</div><!--End title-->
 
+	<!--FINAL PROJECTS-->
+	<div id="finalProjects"><!--Container div for finalProjects-->
+		<div id="finalProjectsList"><!--"Final Projects" here-->
+			<span class="rainbowHover"><img src="assets/images/folder.png" id="folder"> FINAL_PROJECTS</span><br>
+		</div><!--end finalProjectsList-->
+			<div class="weekListImage"><!--Div to hold image-->
+				<div id="finalProjectsParent" class="rainbowHover">
+					<span id="project1" class="rainbowHover weekListImage"><img src="assets/images/folder.png"><a href="finalprojects/01_edmundfitzgerald/helloworld.html" target="_blank" class="rainbowHover"> PROJECT_01/HELLO_WORLD/WRECK_OF_THE_EDMUND_FITZGERALD</a></span><br>
+
+					<!--project 2 here-->
+					<span id="project2" class="rainbowHover weekListImage"><img src="assets/images/folder.png"><a href="finalprojects/02_consoleloop/consoleloop.html" target="_blank" class="rainbowHover"> PROJECT_02/CONSOLE_LOOP/UNTITLED</a></span><br>
+				
+					<!--project 3 here-->
+					<span id="project3" class="rainbowHover weekListImage"><img src="assets/images/folder.png"><a href="finalprojects/03_dreamcollage/dreamCollage.html" target="_blank" class="rainbowHover"> PROJECT_03/COOKIES/DREAM_COLLAGE</a></span><br>
+				
+					<!--project 4 here-->
+					<span id="project4" class="rainbowHover weekListImage"><img src="assets/images/folder.png"><a href="finalprojects/04_elevennations/mapsapi.html" target="_blank" class="rainbowHover"> PROJECT_04/GOOGLE_MAPS_API/11_NATIONS</a></span><br>
+				</div>
+			</div><!--end weekListImage-->
+	</div><!--end finalProjects-->
+
 	<!--PROJECTS-->
 	<div id="projects"><!--Container div for projects-->
 		<div id="projectsList"><!--"Projects" here-->
@@ -183,6 +204,15 @@
 		<script>
 			console.log("jquery is working");
 
+			
+
+		//FINAL PROJECTS
+			//Toggle links
+			$('#finalProjectsList').click(function () {
+				$('#finalProjectsParent').toggle();
+			});
+
+		//PROJECTS
 			//Toggle weeks
 			$('#projectsList').click(function () {
 				$('#week1ListParent').toggle();
@@ -198,7 +228,6 @@
 				$('#week16ListParent').toggle();
 			});
 
-		//PROJECTS
 			//Turn on week 1. DOES NOT TOGGLE; SEE BUG FIX AT END OF CODE
 			$('#week1ListParent').click(function () {
 				$('#week1List').css("display", "block");
