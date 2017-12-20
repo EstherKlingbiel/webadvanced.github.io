@@ -1,0 +1,183 @@
+#audioParent {
+	display: table;
+	margin: 0 auto;
+}
+
+.blueHover {/*link style for separate pages*/
+	color: white;
+	text-decoration: none;
+	-webkit-transition: color 0.2s ease-in-out;	
+}
+	.blueHover:hover {/*blue link animation on hover*/
+		color: rgb(153, 194, 255);
+		-webkit-transition: color 0.2s ease-in-out;	
+	}
+
+body {
+	background-attachment: fixed;
+	background-image: url('../images/ocean.jpg');
+	background-position: absolute;
+	background-size: cover;
+	color: white;
+	cursor: default;
+	font-family: 'Spectral';
+	font-size: 25px;
+	line-height: 40px;
+	margin-left: 10%;
+	margin-right: 10%;
+	overflow: none;
+	padding-top: 5px;
+	-webkit-user-select: none;
+	
+	animation-name: fadeIn;/*fade-in on page load*/
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-delay: none;
+}
+	@keyframes fadeIn {/*fade-in opacity settings*/
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+#capsize {
+	cursor: pointer;
+}
+
+#capsizeimg {
+	display: none;
+	width: 150px;
+}
+
+#captain {
+	cursor: pointer;
+}
+
+#captainimg {
+	display: none;
+	width: 100px;	
+}
+
+#edmundfitzgerald {
+	cursor: pointer;
+}
+
+#erie {
+	cursor: pointer;
+}
+
+#erieimg {
+	display: none;
+	width: 150px;
+}
+
+#gitchegumee {
+	cursor: pointer;
+}
+
+.greenHover {/*link style for images on page*/
+	color: white;
+	text-decoration: none;
+	-webkit-transition: color 0.2s ease-in-out;
+}
+	.greenHover:hover{/*green link animation on hover*/
+		color: rgb(153, 255, 197);
+		-webkit-transition: color 0.2s ease-in-out;
+	}
+
+#hatchwayimg {
+	display: none;
+	width: 100px;	
+}
+
+#huron {
+	cursor: pointer;
+}
+
+#huronimg {
+	display: none;
+	width: 150px;
+}
+
+img {
+	vertical-align: top;
+}
+
+#northwind {
+	cursor: pointer;
+}
+
+#mainhatchway {
+	cursor: pointer;
+}
+
+#mariners {
+	cursor: pointer;
+}
+
+#marinersimg {
+	display: none;
+	width: 150px;
+}
+
+#michigan {
+	cursor: pointer;
+}
+
+#michiganimg {
+	display: none;
+	width: 100px;
+}
+
+#ontario {
+	cursor: pointer;
+}
+
+#ontarioimg {
+	display: none;
+	width: 150px;
+}
+
+#parent {
+	margin-bottom: 30px;
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: center;
+}
+
+#prayers {
+	cursor: pointer;
+}
+
+#prayersimg {
+	display: none;
+	width: 150px;
+}
+
+#shipimg {
+	display: none;
+	width: 150px;
+}
+
+#superiorimg {
+	display: none;
+	width: 150px;
+}
+
+#weathermapimg {
+	display: none;
+	width: 150px;
+}
+
+#whitefishbay {
+	cursor: pointer;
+}
+
+#whitefishbayimg {
+	display: none;
+	width: 150px;
+}
