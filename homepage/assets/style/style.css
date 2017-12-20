@@ -80,6 +80,7 @@ body {
 	overflow: scroll;
 	padding-left: 10px;
 	-webkit-user-select: none;
+	text-decoration: none;
 
 	animation-name: fadeIn;/*fade-in on page load*/
 	animation-duration: 5s;
@@ -119,6 +120,27 @@ body {
 #file {
 	height: 15px;
 	width: 15px;
+}
+
+#finalProjects {
+	background-image: url('../images/space11.jpg');
+	background-repeat: repeat-y;
+	color: white;
+	cursor: pointer;
+	float: left;
+	font-size: 30px;
+	margin-bottom: 10px;
+	width: 100%;
+	text-decoration: none;
+}
+
+#finalProjectList {
+	text-decoration: none;
+}
+
+#finalProjectsParent {
+	display: none;
+	text-decoration: none;
 }
 
 #inClass {
@@ -200,6 +222,35 @@ body {
 	height: 17px;
 	width: 17px;
 }
+
+#project1 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	margin-left: 35px;
+	text-decoration: none;
+}
+
+#project2 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	margin-left: 35px;
+	text-decoration: none;
+}
+
+#project3 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	margin-left: 35px;
+	text-decoration: none;
+}
+
+#project4 {
+	font-size: 25px;
+	margin-bottom: 10px;
+	margin-left: 35px;
+	text-decoration: none;
+}
+
 
 #projects {
 	background-image: url('../images/space02.jpg');
@@ -458,6 +509,7 @@ body {
 	background-image: url('../images/space03.jpg');
 	background-position-x: 35px;
 	background-repeat: repeat-y;
+	text-decoration: none;
 }
 
 #world {
