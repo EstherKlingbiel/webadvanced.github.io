@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"><!--for special characters-->
+
+	<title>Assignment 8: Dream Collage Working Prototype</title><!--browser tab info-->
+
+	<link rel="icon" type="image/png" href="assets/images/i.png"><!--brower tab icon image-->
+
+	<link rel="stylesheet" type="text/css" href="assets/style/style.css"><!--link to css-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!--link to jQuery library-->
+
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script><!--link to JQuery library that lets you drag stuff around-->
+
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><!--cookies library-->
+
+	<script type="text/javascript" src="assets/js/main.js"></script><!--link to jquery script-->
+
+	<script type="text/javascript" src="assets/js/plugins.js"></script><!--link to jquery plugins-->
+
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"><!--google font link-->
+</head>
+<body>
+	<div id="fadeDiv"><!--div to trigger bodyFade-->
+	<div id="spaceParent"><!--parent div for img and description-->
+		<img src="assets/images/space.jpg" id="space" class="drag">
+		<div id="spaceDescription" class="description drag">
+			<u>Cosmic Space</u>: Beyond thinking or limited concepts and ego boundaries; beyond what is established already; being out of touch with reality.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="rainbowParent"><!--parent div for img and description-->
+		<img src="assets/images/rainbow.jpg" id="rainbow" class="drag">
+		<div id="rainbowDescription" class="description drag">
+			<u>Rainbow</u>: A sense of better things to come; illusion; an awareness of the beauty and value of life in the midst of difficulties.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="waterBlueParent"><!--parent div for img and description-->
+		<img src="assets/images/waterBlue.jpg" id="waterBlue" class="drag">
+		<div id="waterBlueDescription" class="description drag">
+			<u>Water</u>: Emotions, moods and flow of feeling energy.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="cometParent"><!--parent div for img and description-->
+		<img src="assets/images/comet.jpg" id="comet" class="drag">
+		<div id="cometDescription" class="description drag">
+			<u>Comet</u>: Sign of coming changes; new influences from within; birth of new self.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="owlParent"><!--parent div for img and description-->
+		<img src="assets/images/owl.jpg" id="owl" class="drag">
+		<div id="owlDescription" class="description drag">
+			<u>Owl</u>: Our intuitive sense that "sees" what is happening in the subtle areas of feeling and perceptions.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="computerParent"><!--parent div for img and description-->
+		<img src="assets/images/computer.jpg" id="computer" class="drag">
+		<div id="computerDescription" class="description drag">
+			<u>Computer</u>: Powers of the mind; rational unemotional mind; personal potential or abilities; memory; looking into the unconsious or activities of the mind; perhaps the extended faculties of the mind.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="dolphinsParent"><!--parent div for img and description-->
+		<img src="assets/images/dolphins.jpg" id="dolphins" class="drag">
+		<div id="dolphinsDescription" class="description drag">
+			<u>Dolphins</u>: Powerful unconscious energies in us; conscious awareness of one's link with all life; contact with the one life within all things.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="fishParent"><!--parent div for img and description-->
+		<img src="assets/images/fish.png" id="fish" class="drag">
+		<div id="fishDescription" class="description drag">
+			<u>Fish</u>: The wisdom we have not yet brought to consciousness; regarding out personal journey in time and eternity.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="rosesParent"><!--parent div for img and description-->
+		<img src="assets/images/roses.png" id="roses" class="drag">
+		<div id="rosesDescription" class="description drag">
+			<u>Flowers</u>: Sense of beauty; flowering of a feeling, quality, or ability; transitory beauty of life or youth; feelings of pleasure; youthfulness; time of flowering.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="poolParent"><!--parent div for img and description-->
+		<img src="assets/images/pool.jpg" id="pool" class="drag">
+		<div id="poolDescription" class="description drag">
+			<u>Pool</u>: Our inner world of thoughts, fantasies, and feelings; sometimes a sense of unity with living beings&mdash;collective consciousness or the influence of other people have on us in a social or group interaction.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="drowningParent"><!--parent div for img and description-->
+		<img src="assets/images/drowning.png" id="drowning" class="drag">
+		<div id="drowningDescription" class="description drag">
+			<u>Drowning</u>: A feeling of being overwhelmed by difficult emotions or anxieties.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="snakeParent"><!--parent div for img and description-->
+		<img src="assets/images/snake.png" id="snake" class="drag">
+		<div id="snakeDescription" class="description drag">
+			<u>Snake</u>: The snake can represent many different things, but usually the life process. If we think of a person's life from conception to death, we see a flowing, moving event...the snake depicts the force or energy behind that movement and purposiveness&mdash;the force of life, the latent energy or potential within matter&mdash;that leads us both to growth and death, along with the passionate emotions and urges that drive us so powerfully.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="handParent"><!--parent div for img and description-->
+		<img src="assets/images/hand.png" id="hand" class="drag">
+		<div id="handDescription" class="description drag">
+			<u>Hand</u>: Self-expression; grasp&mdash;of life, of ideas, of opportunities; our hold on people, our children, situations. Extension of of our power&mdash;to give, to take, wound, heal, support, or do.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="jewelsParent"><!--parent div for img and description-->
+		<img src="assets/images/jewels.jpg" id="jewels" class="drag">
+		<div id="jewelsDescription" class="description drag">
+			<u>Jewels</u>: Things we, or our unconsciousness, treasure; integrity, or sense of wholeness; the lasting parts of our nature, even the eternal aspect of self or the essential core of ourselves.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="mouthParent"><!--parent div for img and description-->
+		<img src="assets/images/mouth.png" id="mouth" class="drag">
+		<div id="mouthDescription" class="description drag">
+			<u>Mouth</u>: Pleasure area; your hungers, sexual pleasure. Also, because we speak with our mouth and tongue, they can represent what we say.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="prayerParent"><!--parent div for img and description-->
+		<img src="assets/images/prayer.png" id="mouth" class="drag">
+		<div id="prayerDescription" class="description drag">
+			<u>Prayer</u>: Looking for certainty in the face of anxieties; seeking approval or authority for one's desires; expression of pleasure and thanks; seeking cooperation from unconscious faculties to aid one's everyday activities; attempt to channel the forces of the unconsious; feeling at one with life.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="wildAnimalParent"><!--parent div for img and description-->
+		<img src="assets/images/wildAnimal.jpg" id="wildAnimal" class="drag">
+		<div id="wildAnimalDescription" class="description drag">
+			<u>Wild Animal</u>: Represents unrepressed instinctive reactions, such as fight-or-flight, sex, and anger. In the attacking mode, it is unleashed aggression. In some dreams, being attacked depicts what we feel in relationships with other people. The attack, the criticism and maligned emotions directed at us by others, are frequently shown as an animal attacking or biting us.
+		</div><!--end description-->
+	</div><!--end parent-->
+
+	<div id="nightParent"><!--parent div for img and description-->
+		<img src="assets/images/night.png" id="night" class="drag">
+		<div id="nightDescription" class="description drag">
+			<u>Night</u>: Usually the unconscious; dark or little sensed areas of oneself; lonliness; areas of subtly felt urges or feelings. Sometimes, freedom.
+		</div><!--end description-->
+	</div><!--end parent-->
+	</div><!--end fadeDiv-->
+</body>
+</html>
